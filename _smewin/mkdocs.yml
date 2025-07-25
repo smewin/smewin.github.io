@@ -3,7 +3,34 @@ site_description: 转工管群群页面
 site_url: https://smewin.github.io/
 nav:
     - Home: index.md
-    - Intro: sme_intro/intro.md
+    - Intro: 
+      - Intro: sme_intro/intro.md
+      - Contributor: sme_intro/contributors.md
+      - FAQ: sme_intro/FAQ.md
+    - CS:
+      - CS: cs/cs.md
+      - ICS: 
+          - ICS: cs/ics/ics_pre.md
+          - ICS_Cheat_Sheet: cs/ics/cheat_sheet.md
+          - ICS_理论试题选解:
+            - 第4章 程序的链接: cs/ics/theory/ICS-04.md
+            - 第6章 层次结构存储系统: cs/ics/theory/ICS-06.md
+            - 第7章 异常控制流: cs/ics/theory/ICS-07.md
+            - 第8章 I/O操作的实现: cs/ics/theory/ICS-08.md
+          - ICS_PA(x86): 
+            - 在PA开始之前（x86）: cs/ics/ics_pa_pre.md
+            - PA 1-1 世界诞生的前夜: cs/ics/pa/ics_pa-1-1.md
+            - PA 1-2 不停运算的机器: cs/ics/pa/ics_pa-1-2.md
+            - PA 1-3 浮点运算的大门: cs/ics/pa/ics_pa-1-3.md
+            - PA 2-1 简单复杂的机器: cs/ics/pa/ics_pa-2-1.md
+            - PA 2-2 Linux中的文件: cs/ics/pa/ics_pa-2-2.md
+            - PA 2-3 字符串求值: cs/ics/pa/ics_pa-2-3.md
+            - PA 3-1 更快访问的追求: cs/ics/pa/ics_pa-3-1.md
+            - PA 3-2 虚实交错的魔法: cs/ics/pa/ics_pa-3-2.md
+            - PA 3-3 超越容量的界限: cs/ics/pa/ics_pa-3-3.md
+            - PA 4-1 来自外部的声音: cs/ics/pa/ics_pa-4-1.md
+            - PA 4-2 冯诺依曼的构想: cs/ics/pa/ics_pa-4-2.md
+            - PA 4-3 编写不朽的传奇: cs/ics/pa/ics_pa-4-3.md
     
 markdown_extensions:
   - pymdownx.highlight:
