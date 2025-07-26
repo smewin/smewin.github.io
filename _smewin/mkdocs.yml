@@ -4,9 +4,11 @@ site_url: https://smewin.github.io/
 nav:
     - Home: index.md
     - Intro: 
-      - Intro: sme_intro/intro.md
-      - Contributor: sme_intro/contributors.md
+      - 工管院简介: sme_intro/intro.md
+      - 贡献者指南: sme_intro/contributors.md
       - FAQ: sme_intro/FAQ.md
+    - People: 
+      - 疾旋鼬: people/jxy.md
     - CS:
       - CS: cs/cs.md
       - ICS: 
