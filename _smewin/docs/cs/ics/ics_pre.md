@@ -22,14 +22,7 @@
 
     We seek wisdom not for any other benefit, but because humans are inherently free to pursue such knowledge.
 
-### ICS理论试题选解:
-* [第4章 程序的链接](theory/ICS-04/)
-* [第6章 层次结构存储系统](theory/ICS-06/)
-* [第7章 异常控制流](theory/ICS-07/)
-* [第8章 I/O操作的实现](theory/ICS-08/)
-
-### ICS_PA: 
-* [x86模拟编程实践NEMU](ics_pa_pre.md)
+---
 
 内容尚不完善，欢迎各位大神贡献，详询转工管群信息支持保障与空间网络安全小组。
 
