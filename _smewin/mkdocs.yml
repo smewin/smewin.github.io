@@ -40,6 +40,10 @@ nav:
             - PA 4-2 冯诺依曼的构想: cs/ics/pa/ics_pa-4-2.md
             - PA 4-3 编写不朽的传奇: cs/ics/pa/ics_pa-4-3.md
     
+    - Sec:
+      - Sec: sec/index.md
+
+    
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true

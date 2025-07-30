@@ -334,6 +334,24 @@
   
 
       
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../sec/" class="md-tabs__link">
+          
+  
+  Sec
+
+        </a>
+      </li>
+    
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -533,6 +551,15 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      框架简介
+    </span>
+  </a>
   
 </li>
       
@@ -1440,6 +1467,72 @@
   
 
     
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Sec
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Sec
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sec
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -1499,6 +1592,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      框架简介
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1533,7 +1635,7 @@
 <h3 id="mkdocs">MkDocs构建</h3>
 <p>这是与我们大部分页面相一致的构建方式，您在<code>docs/people</code>下创建一个新的Markdown文件来创建个人页面，比如<code>jxy.md</code>。</p>
 <p><img alt="新建文件" src="../pic/con_mk01.png" /></p>
-<p>然后接下来就是编写内容。我们简单介绍几个，希望对你有所帮助。</p>
+<p>然后接下来就是编写内容。我们简单介绍几个<code>Markdown</code>用法，希望对你有所帮助。</p>
 <p><img alt="编写内容" src="../pic/con_mk02.png" /></p>
 <p><img alt="编写内容2" src="../pic/con_mk03.png" /></p>
 <p>最后你就可以制作出你的个人页面！然后我们在终端中打开<code>_smewin</code>目录，运行如下命令。</p>
@@ -1544,6 +1646,12 @@
 <p><img alt="mkdocs.yml" src="../pic/con_mk04.png" /></p>
 <p>当然你也可以在你贡献的页面中添加导航，参考我们上面<code>Markdown介绍</code>第二张图片所示的超链接即可。</p>
 <h3 id="html">HTML构建</h3>
+<p>事实上我们使用<code>Markdown</code>编写文档后，MkDocs可以将其转换为HTML文件，然后我们将其托管到了<code>GitHub</code>，使用<code>GitHub Pages</code>托管静态网站。</p>
+<p>直接使用<code>HTML</code>创建个人页面形式可能更自由，也相对容易移植，你可以自由选择你喜欢的模板或主题，你甚至可以使用其他静态网站构建工具构建页面，你只需要将你的HTML文件托管在<code>smewin.github.io/people</code>即可（我们建议你把文件命名为<code>index.html</code>并在<code>people</code>下新建一个你的名字或昵称的文件夹存放，你可以进一步修改<code>mkdocs.yml</code>添加链接，形如<code>people/(你的文件名或昵称文件夹名)/</code>）。</p>
+<hr />
+<h2 id="_2">框架简介</h2>
+<p>我们的<code>Markdown</code>文档位于<code>_smewin</code>目录下。<code>mkdocs.yml</code>为<code>MkDocs</code>主配置文件。</p>
+<p>我们推荐把当前页面的图片与文件分别存放在同级目录下的<code>./pic</code>与<code>./file</code>文件夹中。</p>
 <hr />
 
 
