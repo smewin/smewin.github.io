@@ -82,3 +82,11 @@ extra_javascript:
 
 extra_css:
   - https://unpkg.com/katex@0/dist/katex.min.css
+
+plugins:
+  - git-revision-date-localized:
+      type: datetime  # 完整日期时间格式
+      time_format: "%Y年%m月%d日 %H:%M"  # 自定义中文时间格式
+      timezone: Asia/Shanghai  # 设置时区
+      locale: zh  # 设置中文显示
+      show_if_no_revision: false  # 没有历史时不显示
