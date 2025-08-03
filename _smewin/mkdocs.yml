@@ -41,6 +41,12 @@ nav:
             - PA 4-3 编写不朽的传奇: cs/ics/pa/ics_pa-4-3.md
       - DSA:
         - DSA: cs/dsa/dsa.md
+      - ICS_RISCV: cs/ics_riscv/index.md
+        - 课程介绍: cs/ics_riscv/course_intro/index.md
+        - 编写宗旨: cs/ics_riscv/guidelines/index.md
+        - PA: cs/ics_riscv/PA/index.md
+        - labs: cs/ics_riscv/labs/index.md
+        - 理论课: cs/ics_riscv/theory/index.md
     - Sec:
       - Sec: sec/index.md
 

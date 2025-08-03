@@ -2,7 +2,7 @@
 <style>p { text-indent: 2em; }</style>
 
 
-# 计算机系统基础
+# 计算机系统基础（riscv 版）
 
 ---
 
