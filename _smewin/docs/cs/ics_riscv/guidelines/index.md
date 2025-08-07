@@ -54,7 +54,3 @@ PA 作为一个大实验，它是要用软件构建一个计算机系统，但�
 
 
 如果有相关的建议不吝赐教的，也欢迎联系：<email>231250084@smail.nju.edu.cn</email>，在此先行感谢。
-
----
-
-最近一次更新时间: {{ git_revision_date_localized }}

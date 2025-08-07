@@ -36,7 +36,7 @@
 
 !!! tip "你说得太复杂了，我只想知道我现在选的课是哪个版本的 PA。"
     简单来说，在 2025 年前后的学期：
-    
+
     - [`王慧妍`](http://www.why.ink:8080/) 或 [`刘杰`](https://njulj.github.io/) 老师 → `riscv PA`
     
     - [`汪亮`](https://cs.nju.edu.cn/wangliang/) 老师 → `x86 PA`
@@ -49,10 +49,3 @@
 
 
 本页面仅针对 `riscv PA` 进行讲解，不过其中涉及的理论部分可供各班级同学参考。
-
-
-
-
----
-
-最近一次更新时间: {{ git_revision_date_localized }}

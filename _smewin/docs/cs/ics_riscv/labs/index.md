@@ -10,7 +10,3 @@
 
 Lab 文档的编写原则和 PA 的基本相同，相关内容可以参考 [PA 部分](../PA/index.md)。
 
-
----
-
-最近一次更新时间: {{ git_revision_date_localized }}
