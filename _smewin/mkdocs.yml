@@ -45,8 +45,10 @@ nav:
         - 简介: cs/ics_riscv/index.md
         - 课程介绍: cs/ics_riscv/course_intro/index.md
         - 编写宗旨: cs/ics_riscv/guidelines/index.md
-        - PA: cs/ics_riscv/PA/index.md
-        - labs: cs/ics_riscv/labs/index.md
+        - PA:
+          - 编写内容介绍: cs/ics_riscv/PA/index.md
+        - labs:
+          - 编写内容介绍: cs/ics_riscv/labs/index.md
         - 理论课: cs/ics_riscv/theory/index.md
     - Sec:
       - Sec: sec/index.md
