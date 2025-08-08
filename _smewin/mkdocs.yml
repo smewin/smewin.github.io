@@ -2,26 +2,26 @@ site_name: 转工管群 Wiki
 site_description: 转工管群群页面
 site_url: https://smewin.github.io/
 nav:
-    - Home: index.md
-    - Intro: 
+    - 主页: index.md
+    - 简介: 
       - 工管院简介: sme_intro/intro.md
       - 贡献者指南: sme_intro/contributors.md
       - FAQ: sme_intro/FAQ.md
-    - People: 
+    - 人物志: 
       - 疾旋鼬: people/jxy.md
-    - FE:
-      - FE: fe/index.md
+    - 金融工程:
+      - 简介: fe/index.md
       - 财务会计与管理决策: fe/famd/index.md
       - 固定收益证券: fe/fis/index.md
       - 金融软件工程: fe/fse/index.md
       - 货币银行学: fe/mb/index.md
       - 经济学原理: fe/pe/index.md
-    - IE:
-      - IE: ie/index.md
-    - Auto:
-      - Auto: auto/index.md
+    - 工业工程:
+      - 简介: ie/index.md
+    - 自动化:
+      - 简介: auto/index.md
     - CS:
-      - CS: cs/cs.md
+      - 简介: cs/cs.md
       - ICS: 
           - ICS: cs/ics/ics_pre.md
           - ICS_Cheat_Sheet: cs/ics/cheat_sheet.md
@@ -53,13 +53,13 @@ nav:
         - labs:
           - 编写内容介绍: cs/ics_riscv/labs/index.md
         - 理论课: cs/ics_riscv/theory/index.md
-      - DSA: cs/dsa/dsa.md
+      - 数据结构与算法: cs/dsa/dsa.md
       - 离散数学: cs/dm/index.md
       - 面向对象: cs/fop/index.md
-    - General:
+    - 通修:
       - 简介: general/index.md
-    - Sec:
-      - Sec: sec/index.md
+    - ISGSNSG:
+      - 简介: sec/index.md
 
     
 markdown_extensions:
@@ -74,6 +74,7 @@ markdown_extensions:
 
 theme:
   name: material
+  favicon: docs/pic/logo.png  # 图标路径
   features:
     - navigation.tabs # 启用顶级部分将呈现在上面视口标题下方的菜单层中，但在移动设备上保持原样
   icon:
