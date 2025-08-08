@@ -7,6 +7,12 @@
 
 [计算机系统基础（ICS）](./ics/ics_pre.md)
 
-[数据结构与算法设计](./dsa/dsa.md)
+[计算机系统基础（ICS risc-v版）](./ics_riscv/index.md)
+
+[数据结构与算法设计（工程管理学院）](./dsa/dsa.md)
+
+[离散数学](./dm/index.md)
+
+[面向对象编程基础（工程管理学院）](./fop/index.md)
 
 ---
