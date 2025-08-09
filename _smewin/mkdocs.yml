@@ -18,6 +18,12 @@ nav:
       - 经济学原理: fe/pe/index.md
     - 工业工程:
       - 简介: ie/index.md
+      - 运筹学I: ie/or1/index.md
+      - 运筹学II: ie/or2/index.md
+      - 基础工业工程: ie/bie/index.md
+      - 离散优化算法: ie/doa/index.md
+      - 管理学: ie/man/index.md
+      - 应用统计学: ie/as/index.md
     - 自动化:
       - 简介: auto/index.md
     - CS:

@@ -13,3 +13,15 @@
 [数据结构与算法设计](../cs/dsa/dsa.md)
 
 ## 学科专业
+
+[运筹学I](./or1/index.md)
+
+[运筹学II](./or2/index.md)
+
+[基础工业工程](./bie/index.md)
+
+[离散优化算法](./doa/index.md)
+
+[管理学](./man/index.md)
+
+[应用统计学](./as/index.md)

@@ -41,7 +41,7 @@ mkdocs build
 
 你就可以在`_smewin/site/people`下找到你个人页面所署的文件夹了。接着将`_smewin/site`相关页面复制，粘贴到`smewin.github.io/`中的相应目录中即可。（你也可以把`_smewin/site`下所有的文件复制，粘贴到`smewin.github.io/`，替换重名文件，这就相当于将整个Wiki重新构建）。
 
-这样你就可以通过`smewin.github.io/people/(你的文件名)`在转工管群Wiki中查看你的个人页面了。如果你想在转工管群Wiki主页面添加你个人页面的索引，你可以修改`mkdocs.yml`，在people下添加索引。
+这样你就可以通过`smewin.github.io/people/(你的文件名)`在转工管群Wiki中查看你的个人页面了。如果你想在转工管群Wiki主页面添加你个人页面的索引，你可以修改`mkdocs.yml`，在people下添加索引。（请注意：如果您这样做了，建议您把`_smewin/site`下所有的文件复制，粘贴到`smewin.github.io/`，替换重名文件，以免出现意外错误）
 
 ![mkdocs.yml](./pic/con_mk04.png)
 
