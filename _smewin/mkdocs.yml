@@ -26,6 +26,7 @@ nav:
       - 应用统计学: ie/as/index.md
     - 自动化:
       - 简介: auto/index.md
+      - 自动化导论(SME): auto/aai/index.md
     - CS:
       - 简介: cs/cs.md
       - ICS: 
