@@ -59,6 +59,7 @@ nav:
           - 编写内容介绍: cs/ics_riscv/PA/index.md
           - PA0：开始之前: cs/ics_riscv/PA/PA0_1.md
           - PA0：初识 Linux: cs/ics_riscv/PA/PA0_2.md
+          - PA0：关于 Vim: cs/ics_riscv/PA/PA0_3.md
         - labs:
           - 编写内容介绍: cs/ics_riscv/labs/index.md
         - 理论课: cs/ics_riscv/theory/index.md
