@@ -85,7 +85,7 @@ markdown_extensions:
 
 theme:
   name: material
-  favicon: docs/pic/logo.png  # 图标路径
+  favicon: pic/logo.png  # 图标路径
   features:
     - navigation.tabs # 启用顶级部分将呈现在上面视口标题下方的菜单层中，但在移动设备上保持原样
   icon:

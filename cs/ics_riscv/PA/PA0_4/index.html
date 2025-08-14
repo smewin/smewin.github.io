@@ -19,7 +19,7 @@
         <link rel="next" href="../../labs/">
       
       
-      <link rel="icon" href="../../../../docs/pic/logo.png">
+      <link rel="icon" href="../../../../pic/logo.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.16">
     
     
@@ -2494,9 +2494,9 @@
 <a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w"> </span><span class="err">...</span>
 </code></pre></div>
 <p>一大堆的报错信息你肯定懒得看，你如果不知道它的机制，即使看懂了你也不会改，这种时候不如直接问 AI ：</p>
-<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>我的 CMakeLists.txt 使用时出现了报错，以下是我的 CMakeLists.txt 和报错信息，请帮我修改，直接给我生成一个新的 CMakeLists.txt 文件。
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>我的 CMakeLists.txt 使用时出现了报错，以下是我的 CMakeLists.txt 和报错信息，请帮我修改，直接给我生成一个新的 CMakeLists.txt 文件。
 </code></pre></div>
-然后你要做的就是复制粘贴了。</p>
+<p>然后你要做的就是复制粘贴了。</p>
 <p>继续推广这个技巧，当我们在自己写程序时，也可以借鉴这种思路，在程序中输出足够多的 log 信息，这样 AI 就可以帮我们分析错误原因。比如</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">num</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
 <a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">10</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">){</span>
@@ -2530,6 +2530,11 @@
 <p>所以，或许这道题实际是出成这样的：</p>
 <p><img alt="2024九省联考数学第19题翻转" src="../../pic/PA/math_reversed.png" /></p>
 <p>上面是原题干，下面是出题老师所补充的，让高中生能够做出题目而准备的信息，他们是有这样的前后关系的，而几年来我们一直把题目做反了。</p>
+<div class="admonition question">
+<p class="admonition-title">我现在知道了需要提供哪些信息了，那具体我该如何提问？</p>
+<p>怎么问怎么答，问几点答几点，这是大家做那么久语文题一直接触的准则。题目让分析修辞就说用了什么修辞，让结合原文就引用原文某某片段，要结合生活实际就说自己遇到过什么什么事。</p>
+<p>限于篇幅，就不详细解释了，不过对身经百战的你来说应该也不难。其实也就只是反过来，从答题者变成出题者而已。</p>
+</div>
 <p>总而言之，如何使用 AI ，或许早在高中时期就是一个伏笔，现在是检验大家学习成效的时候了。</p>
 <h2 id="_3">旅行伙伴加入！</h2>
 <p>说了这么多，最关键的问题其实就是，对于 AI 来说，对于我们问的每一个具体问题，它的<strong>非知识库知识</strong>是什么，这些就是我们需要补充的内容。</p>
@@ -2567,12 +2572,19 @@
 <p>所以，我们还需要提供给 AI 我们的项目架构。这又该怎么办呢？（这难道还用我说嘛）</p>
 <details class="info">
 <summary>一个参考答案</summary>
+<p>同样可以通过命令行工具来获取项目架构：
 <div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>tree
-</code></pre></div>
+</code></pre></div></p>
 </details>
 <p>把文件架构的内容也复制给 AI ，想必就能得到更好的答案了。</p>
 <p>但是，虽然我们有了项目架构，文件内容和提供的文件架构之间对应不上，也就是说 AI 并不知道你的项目下的每一个文件对应什么内容，这又该怎么办？</p>
 <p>所以，你知道自己应该养成这样一个习惯，在每个代码文件的开头用注释写上这个文件的路径和名称，这样就能够建立起架构到内容的对应关系了。</p>
+<div class="admonition note">
+<p class="admonition-title">思路总结</p>
+<p>我们先分析了 AI 需要哪些补充信息，然后得知了需要实验文档，再通过命令行工具快速整合了项目代码。再经分析发现还需要项目结构，于是我们询问 AI ，得知了可以通过新的命令行工具来获取项目结构。我们获得了新的命令行伙伴。</p>
+<p>然后，为了建立文件到代码的一一对应关系，我们得出了“应当养成在代码文件头部写出当前代码所属的文件名的习惯”的结论。</p>
+<p>通过不断分析，不断研究，我们逐渐形成了自己的解决问题的思路，并最终得出了自己的解决方案。</p>
+</div>
 <p>综上，我们应该建立起这样的理念，就是每当自己有一个需求，就需要根据需求来分析解决方法，由此得到自己应当做什么来解决这个需求，相信这个理念会在未来的道路上一直帮助到大家。</p>
 <hr />
 <p>能够跟到这里，笔者也该跟你说一句辛苦了，我该感谢你对我撰写的文档质量的信任，虽然限于篇幅，不可能在使用 AI 的方法上面面俱到，如果你有更多使用 AI 的独门秘诀，也欢迎与我偷偷分享。(doge)</p>
@@ -2600,7 +2612,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年8月13日 23:24:02 CST">2025年8月13日 23:24:02</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年8月14日 13:53:02 CST">2025年8月14日 13:53:02</span>
   </span>
 
     
