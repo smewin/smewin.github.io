@@ -2528,12 +2528,13 @@
 <p>学习命令行工具最快的办法可能还是多使用，当你面对某种需求时，你可能就会想到，似乎可以通过某些命令行工具来解决，逐渐使用得多了，就容易记住了。从笔者个人的学习经验来说，单纯去记背命令行工具的用法，会比较容易遗忘，这也是为什么我建议你使用 AI 帮你生成一些具体的情境示例，这样的话才能让你大概知道在什么样的环境下哪些命令行工具能派上用场。</p>
 <h2 id="_2">命令行中的管道与重定向</h2>
 <p>你应该已经大概掌握了简单的命令行操作了，接下来你需要了解命令行中的<strong>管道</strong>和<strong>重定向</strong>。</p>
-<p>所谓管道，就是一个能够把一个程序的输出作为另一个程序的输入的工具，用 <code>|</code> 表示。下面是一个例子：</p>
+<p>所谓<strong>管道</strong>，就是一个能够把一个程序的输出作为另一个程序的输入的工具，用 <code>|</code> 表示。下面是一个例子：</p>
 <p>假设你有一个存放了大量文件的文件夹，你想在这个文件夹（不包括文件夹内部的其他文件夹）中找到一个文件/文件夹，但你记不太清楚它的名称了，只依稀记得这个文件和“hello”有关。那你就可以使用下面的命令：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ls<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>hello
 </code></pre></div>
-<p>这个命令会先把当前文件夹下所有的文件/文件夹名列出，然后再通过<code>管道</code>把这些名字输送给 <code>grep</code> 工具，这个工具根据后面跟着的 hello ，知道要从其中找出所有名称中含有 hello 的文件/文件夹。</p>
-<p>我们还能够将命令的输出重定向到一个文件中，这样就可以把命令的结果保存到文件中，而不是在终端中显示。</p>
+<p>这个命令会先把当前文件夹下所有的文件/文件夹名列出，然后再通过
+<strong>管道</strong>把这些名字输送给 <code>grep</code> 工具，这个工具根据后面跟着的 hello ，知道要从其中找出所有名称中含有 hello 的文件/文件夹。</p>
+<p>我们还能够将命令的输出<strong>重定向</strong>到一个文件中，这样就可以把命令的结果保存到文件中，而不是在终端中显示。</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ls<span class="w"> </span>&gt;<span class="w"> </span>file.txt
 </code></pre></div>
 <p>这个命令会把当前文件夹下所有的文件/文件夹名都列出来，然后输出到 file.txt 文件中（而不是输出到终端中）。</p>
