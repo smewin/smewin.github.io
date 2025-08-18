@@ -63,6 +63,7 @@ nav:
           - PA0：与 AI 交互: cs/ics_riscv/PA/PA0_4.md
         - labs:
           - 编写内容介绍: cs/ics_riscv/labs/index.md
+          - lab1：大整数运算: cs/ics_riscv/labs/lab1.md
         - 理论课: cs/ics_riscv/theory/index.md
       - 数据结构与算法: cs/dsa/dsa.md
       - 离散数学: cs/dm/index.md
