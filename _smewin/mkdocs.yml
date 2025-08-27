@@ -61,6 +61,10 @@ nav:
           - PA0：初识 Linux: cs/ics_riscv/PA/PA0_2.md
           - PA0：关于 Vim: cs/ics_riscv/PA/PA0_3.md
           - PA0：与 AI 交互: cs/ics_riscv/PA/PA0_4.md
+        - PA+:
+          - 简介: cs/ics_riscv/PA_plus/index.md
+        - PA现场赛:
+          - 简介: cs/ics_riscv/competition/index.md
         - labs:
           - 编写内容介绍: cs/ics_riscv/labs/index.md
           - lab1：大整数运算: cs/ics_riscv/labs/lab1.md
