@@ -6,7 +6,7 @@
 
 Programming Assignment，简称 PA，是《计算机系统基础》课程的大实验，在整门课程中的分数占比较高。实验中要完成的是什么，我这里就不讲了，因为后面你的老师估计会讲很多次。
 
-这份页面会以[原实验手册](https://nju-projectn.github.io/ics-pa-gitbook/ics2024/index.html)的补充材料的形式，对你完成这次实验可能需要的一些东西进行介绍。
+这份页面会以[原实验手册](https://nju-projectn.github.io/ics-pa-gitbook/ics2025/index.html)的补充材料的形式，对你完成这次实验可能需要的一些东西进行介绍。
 
 ## 本文档主要形式
 
