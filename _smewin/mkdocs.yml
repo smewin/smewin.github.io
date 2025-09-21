@@ -64,6 +64,7 @@ nav:
           - PA1：准备工作: cs/ics_riscv/PA/PA1_1.md
           - PA1：对计算机的抽象: cs/ics_riscv/PA/PA1_2.md
           - PA1： NEMU 代码导读: cs/ics_riscv/PA/PA1_3.md
+          - PA1：表达式求值：编译器与软件测试: cs/ics_riscv/PA/PA1_4.md
         - PA+:
           - 简介: cs/ics_riscv/PA_plus/index.md
         - PA现场赛:
