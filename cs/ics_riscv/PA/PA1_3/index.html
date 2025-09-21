@@ -16,7 +16,7 @@
         <link rel="prev" href="../PA1_2/">
       
       
-        <link rel="next" href="../../PA_plus/">
+        <link rel="next" href="../PA1_4/">
       
       
       <link rel="icon" href="../../../../pic/logo.png">
@@ -2219,6 +2219,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PA1_4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PA1：表达式求值：编译器与软件测试
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2908,6 +2931,10 @@
 <p>我们想象一下一个情况，在一个 <code>struct.h</code> 文件中存在一个结构体的类型名称定义，这个头文件被两个不同的 .c 文件所 include ，然后我们生成可执行文件时，需要将这两个 .c 文件合到一起去。众所周知， <code>#include</code> 宏就是直接把一个文件中的内容原封不动地搬到 <code>#include</code> 所在的地方，这个宏在预处理时就原原本本地把两个 .c 文件中都展开了同一份 struct 的定义，然后你就出现了对一个类型重复定义的错误，文件无法编译通过。</p>
 <p>但如果你加上这个 <code>#ifndef __STRUCT_H__</code> 系列宏，在预处理时，在第一个 .c 文件中对 <code>#include &lt;struct.h&gt;</code> 展开时， <code>__STRUCT_H__</code> 暂未被定义，所以中间的内容会正常展开，实现对 <code>__STRUCT_H__</code> 和 <code>struct</code> 的定义。而在第二个 .c 文件中继续展开时，因为 <code>__STRUCT_H__</code> 已经被定义，头文件里面的所有内容都被删去，我们就成功编译通过了。</p>
 <p>所以，这里面 <code>#ifndef</code> 宏的作用就是防止头文件的重复展开导致编译错误。</p>
+<div class="admonition tip">
+<p class="admonition-title">另一种头文件保护方式</p>
+<p>目前还有一种防止头文件重复定义的方式是在头文件里加上一行 <code>#pragma once</code> ，可以尝试搜索和思考两种方式的优缺点。</p>
+</div>
 <h3 id="log">Log</h3>
 <p>继续在 <code>include/debug.h</code> 文件中，看到 <code>Log</code> 宏，里面可以看到 <code>__FILE__</code> <code>__LINE__</code> <code>__func__</code> 这些宏，它们代表什么应该很清晰。</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">#define Log(format, ...) \</span>
@@ -2984,7 +3011,7 @@
 <a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
 <a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="k">extern</span><span class="w"> </span><span class="n">NEMUState</span><span class="w"> </span><span class="n">nemu_state</span><span class="p">;</span>
 </code></pre></div></p>
-<p>这里可以看到对 <code>NEMUState</code> 结构体的声明，其中有三个成员变量。第一个是一个整数 <code>state</code> ，会用来存储上面的枚举类型中的一个，用来代表当前 nemu 的状态（比如 <code>NEMU_RUNNING</code> 表示正在执行用户程序， <code>NEMU_STOP</code> 表示程序暂停执行等），用来控制 nemu 的行为。第二个是虚拟地址类型的 <code>halt_pc</code> ，其中会存储 nemu 在停止执行用户程序时所在的 PC 值（这个变量目前还用不到，在 PA2 中会详细展开）。第三个是一个无符号整数 <code>halt_ret</code> ，这个表示 nemu 的用户程序的返回值（我们都知道， main() 函数返回非零值时表示异常退出）。</p>
+<p>这里可以看到对 <code>NEMUState</code> 结构体的声明，其中有三个成员变量。第一个是一个整数 <code>state</code> ，会用来存储上面的枚举类型中的一个，用来代表当前 nemu 的状态（比如 <code>NEMU_RUNNING</code> 表示正在执行用户程序， <code>NEMU_STOP</code> 表示程序暂停执行等），用来控制 nemu 的行为。第二个是虚拟地址类型的 <code>halt_pc</code> ，其中会存储 nemu 在停止执行用户程序时所在的 PC 值（这个变量目前还用不到，在 PA2 中会详细展开）。第三个是一个无符号整数 <code>halt_ret</code> ，这个表示 nemu 的用户程序的返回值（我们都知道， <code>main()</code> 函数返回非零值时表示异常退出）。</p>
 <p>在这里干讲你肯定不好理解，我们来寻找一个实例。</p>
 <p>我们来到 <code>src/utils/state.c</code> 中，可以找到对 <code>nemu_state</code> 的初始定义：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">NEMUState</span><span class="w"> </span><span class="n">nemu_state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">.</span><span class="n">state</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">NEMU_STOP</span><span class="w"> </span><span class="p">};</span>
@@ -3004,7 +3031,7 @@
 <a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">is_exit_status_bad</span><span class="p">();</span>
 <a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="p">}</span>
 </code></pre></div>
-<p>没想到我们一跳转，直接跳转到整个 nemu 的 main() 函数来了！那这个函数肯定是在指示 nemu 自身的退出状态，而不是用户程序的退出状态。</p>
+<p>没想到我们一跳转，直接跳转到整个 nemu 的 <code>main()</code> 函数来了！那这个函数肯定是在指示 nemu 自身的退出状态，而不是用户程序的退出状态。</p>
 <p>那我们现在可以回到 <code>is_exit_status_bad()</code> 了，从这个函数中我们可以获取如下的信息：</p>
 <p>对于 nemu 来说，枚举类型中的各个状态里，只有 <code>NEMU_END</code> 和 <code>NEMU_QUIT</code> 可以表示正常退出，其他状态都只能表示异常退出，且 <code>NEMU_END</code> 必须在用户程序返回值为 0 时才表示正常退出。</p>
 <p>当退出状态不正常时，整个 nemu 会返回 1 作为退出码，这个异常退出码会被 Makefile 捕获，并打印一些错误信息。</p>
@@ -3029,7 +3056,7 @@
 <a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="p">}</span>
 </code></pre></div>
 <p>这里把一个 <code>Decode</code> 结构体指针 <code>s</code> 的各个参数初始化成地址 <code>pc</code> ，然后 <code>s</code> 带着装入的值，进入到具体的 ISA 指令集中去执行指令了。执行完后， <code>cpu.pc</code> 被更新。</p>
-<p>所以， <code>Decode</code> 结构体实际上就是一个对执行程序的抽象，它包含了执行一条机器指令所需的最小程度的信息，从而在 nemu 中填写好，然后交给具体的 ISA 指令集去执行，实现了 nemu 和 ISA 之间的解耦，使得 nemu 只需准备必须的信息，而无需知道它装载的具体是什么样的指令集，我们将会在 PA2 和这个结构体打很多交道。</p>
+<p>所以， <code>Decode</code> 结构体实际上就是一个对执行程序的抽象，它包含了执行一条机器指令所需的最小程度的信息。它在 nemu 中被填写好，然后交给具体的 ISA 指令集去执行，从而实现了 nemu 和 ISA 之间的解耦。这使得 nemu 只需准备必须的信息，而无需知道它装载的具体是什么样的指令集，我们将会在 PA2 和这个结构体打很多交道。</p>
 <h2 id="gdb">gdb 式的框架</h2>
 <p>最后，我们再来看看 nemu 中 gdb 式的框架。</p>
 <p>前面我们介绍过， gdb 可以视作一个状态机的管理器，我们可以将它简化为以下逻辑：</p>
@@ -3058,7 +3085,7 @@
 </div>
 <hr />
 <h2 id="_2">总结</h2>
-<p>前面说了这么多，或许你全部理解了，或许你很多都没懂，但你肯定已经对 nemu 的代码有了一个大概的了解，完成 RTFSC 一节的必做内容肯定是不成问题了，但在完成下一节“基础设施”的时候，多少还是会遇到一些困难，但那些困难都只是实现上的困难，而不是原理上的困难。只要你在阅读文档和源码的过程中好好思考了 nemu 的执行逻辑（或者只是简单的模仿），实现就只是时间问题，甚至如果你像我们前面<a href="../PA0_4/">与 AI 交互</a>中介绍的那样充分发挥 AI 的力量，实现所需的时间也可以极大缩短。（不过，出于锻炼你代码能力的考虑，还是建议至少核心逻辑应当由你自己实现，在一些繁杂耗时的细节上，使用 AI 是可以理解的）</p>
+<p>前面说了这么多，或许你全部理解了，或许你很多都没懂，但你肯定已经对 nemu 的代码有了一个大概的了解，完成 RTFSC 一节的必做内容肯定是不成问题了，但在完成下一节“基础设施”的时候，多少还是会遇到一些困难，但那些困难都只是实现上的困难，而不是原理上的困难。只要你在阅读文档和源码的过程中好好思考了 nemu 的执行逻辑（甚至只是简单的模仿），实现就只是时间问题，甚至如果你像我们前面<a href="../PA0_4/">与 AI 交互</a>中介绍的那样充分发挥 AI 的力量，实现所需的时间也可以极大缩短。（不过，出于锻炼你代码能力的考虑，还是建议至少核心逻辑应当由你自己实现，在一些繁杂耗时的细节上，使用 AI 是可以理解的）</p>
 <div class="admonition success">
 <p class="admonition-title">开始 PA 的第一关吧</p>
 <p>接下来请你完成 PA1.1 中的任务，完成之后，就可以继续后面的部分了。</p>
@@ -3085,7 +3112,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年9月13日 22:35:28 CST">2025年9月13日 22:35:28</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年9月16日 15:27:06 CST">2025年9月16日 15:27:06</span>
   </span>
 
     
