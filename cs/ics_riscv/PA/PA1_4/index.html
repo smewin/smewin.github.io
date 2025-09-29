@@ -16,7 +16,7 @@
         <link rel="prev" href="../PA1_3/">
       
       
-        <link rel="next" href="../../PA_plus/">
+        <link rel="next" href="../PA1_5/">
       
       
       <link rel="icon" href="../../../../pic/logo.png">
@@ -2209,6 +2209,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../PA1_5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PA1：旅行伙伴加入： fuck'n fish
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2947,7 +2970,7 @@
 </div>
 <h2 id="unsigned">表达式求值测试在 unsigned 的缺陷</h2>
 <p>如果你已经尝试使用了我们提供的参考实现，并且找出了一些表达式求值的 bug ，那么能帮到你我感到很开心，但是再往后你就会发现一些问题：即使你的表达式求值已经通过了 OJ 上的所有测试，但是对于有些输入，总是会在测试程序里显示错误。</p>
-<p>这是因为我们在表达式求值的过程中，全部都在用 unsigned 类型运算，而 python ，包括 C 语言中在进行相应数的表达式求值时，会默认将这些常量按照 int 类型处理，导致一旦出现负数乘除法之类的情况，最后得到的结果可能是和 unsigned 运算不同的。</p>
+<p>这是因为我们在表达式求值的过程中，全部都在用 unsigned 类型运算，而参考实现中的 python 程序，包括 C 语言中在进行相应数的表达式求值时，会默认将这些常量按照 int 类型处理，导致一旦出现负数乘除法之类的情况，最后得到的结果可能是和 unsigned 运算不同的。</p>
 <p>C 语言对值的默认处理应该会让你回想起《计算机系统基础》课上的这张 PPT 。</p>
 <p><img alt="用系统思维分析问题的图表：标题为'用“系统思维”分析问题'，背景白色。内容聚焦于ISO C90和C99标准下32位系统上C表达式的结果差异。绿色文字列出表达式（如-2147483648 &lt; 2147483647），蓝色文字显示结果并提问原因（C90下为false，C99下为true），红色文字强调关键问题。右侧黑色边框框内包含黑色文字说明知识点，部分红色关键词如'编译器如何处理字面量'。整体排版清晰，颜色区分信息类型，便于理解表达式求值与编译器处理的关系。" src="../../pic/PA/signed-unsigned.png" /></p>
 
@@ -2970,7 +2993,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年9月21日 17:47:57 CST">2025年9月21日 17:47:57</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年9月29日 20:13:06 CST">2025年9月29日 20:13:06</span>
   </span>
 
     
