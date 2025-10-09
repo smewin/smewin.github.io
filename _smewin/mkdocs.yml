@@ -68,6 +68,7 @@ nav:
           - PA1：旅行伙伴加入： fuck'n fish: cs/ics_riscv/PA/PA1_5.md
         - PA+:
           - 简介: cs/ics_riscv/PA_plus/index.md
+          - PA+1：表达式生成器: cs/ics_riscv/PA_plus/PA_plus1.md
         - PA现场赛:
           - 简介: cs/ics_riscv/competition/index.md
         - labs:
