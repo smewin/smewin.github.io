@@ -2280,6 +2280,29 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PA_plus/PA_plus1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    PA+1：表达式生成器
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2802,11 +2825,11 @@
 <h2 id="_1">我们的命令行</h2>
 <p>在 PA1 的过程中，想必大家已经开始逐渐熟悉命令行的使用了，我们在日常使用得比较多的几个命令，比如 <code>git</code> <code>make</code> 等，应该已经用过几十次了。</p>
 <p>但偶尔，也会出现一些比较尴尬的情况……比如：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>$<span class="w"> </span>maek
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>$<span class="w"> </span>maek
 <a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">command</span><span class="w"> </span>not<span class="w"> </span>found:<span class="w"> </span>maek
 </code></pre></div>
 <p>尤其是在一长串命令中，不小心手快了打错了一个字母，然后命令行突然沉默了一会，告诉你命令有错，这个时候错就有得好找了。</p>
-<div class="admonition tip">
+<div class="admonition note">
 <p class="admonition-title">注意</p>
 <p>我们出现了一个需求：需要在输入命令有一两个小的字符错误时，能够自动纠正过来。</p>
 </div>
@@ -2814,7 +2837,7 @@
 <h2 id="fuck">新伙伴： fuck</h2>
 <p>这个软件完美地诠释了命令出现小错误时，屏幕前的人的心声。其使用方法大致如下：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>$<span class="w"> </span>maek
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>fuck:<span class="w"> </span><span class="nb">command</span><span class="w"> </span>not<span class="w"> </span>found
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>maek:<span class="w"> </span><span class="nb">command</span><span class="w"> </span>not<span class="w"> </span>found
 <a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>$<span class="w"> </span>fuck
 <a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>make<span class="w"> </span><span class="o">[</span>enter/↑/↓/ctrl+c<span class="o">]</span>
 <a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>$
@@ -2827,7 +2850,7 @@
 <h2 id="_2">还是不满足？</h2>
 <p>现在我们已经拥有了对命令行的小纠错能力，但这还不够。</p>
 <p>我们在完成 PA 时，实际上用得最多的指令就是 <code>make xxx</code>，而且往往会反复使用，比如在实现了一个新功能时，我们肯定会在接下来的几分钟里多次使用 <code>make run</code> ，如果每次都要从头开始敲，是很无聊，也很浪费时间的。</p>
-<div class="admonition tip">
+<div class="admonition note">
 <p class="admonition-title">利用命令的“局部性”</p>
 <p>我们又出现了一个新需求：能够利用命令的“局部性”，将重复性的命令输入自动化。</p>
 </div>
@@ -2855,14 +2878,8 @@
 <p>坏了，现在在 nemu 中连 make 都不能用了！</p>
 </div>
 <p>别着急，这个问题你可能还不知道怎么解决（而且容易改错），我会直接一步步教你解决：</p>
-<ol>
-<li>
-<p>打开 <code>~/.bashrc</code> 文件，找到 <code>export NEMU_HOME=</code> 和 <code>export AM_HOME=</code> 开头的行。</p>
-</li>
-<li>
-<p>把那两行复制到 <code>~/.config/fish/config.fish</code> 文件中。</p>
-</li>
-</ol>
+<p>1.打开 <code>~/.bashrc</code> 文件，找到 <code>export NEMU_HOME=</code> 和 <code>export AM_HOME=</code> 开头的行。</p>
+<p>2.把那两行复制到 <code>~/.config/fish/config.fish</code> 文件中。</p>
 <p>（注意，如果你在 PA 的后续过程中遇到了 navy-apps ，请把 <code>export NAVY_HOME=</code> 那一行也复制到 <code>~/.config/fish/config.fish</code> 文件中。）</p>
 <div class="admonition tip">
 <p class="admonition-title">有没有偷懒的办法？</p>
@@ -2871,12 +2888,17 @@
 <p>还真可以，我去问了问 AI ，可以使用以下命令实现：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;^\s*export\s+(NEMU_HOME|AM_HOME)=&#39;</span><span class="w"> </span>~/.bashrc<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/export/set -x/; s/=/ /&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.config/fish/config.fish
 </code></pre></div>
-<p>所以，对于一个研究计算机的人来说，偷懒是真谛（误）。</p>
-<p>但注意，这只是个简易的命令，使用一次就好，不要多次使用。如果使用后还是不能正常 make ，建议重启试试。同样，如果你后面使用了 navy-apps ，就回来再使用一次下面这个命令：</p>
+<p>所以，对于一个研究计算机的人来说，偷懒是生产力发展的第一动力（误）。</p>
+<p>但注意，这只是个简易的命令，将配置追加到 fish 的配置文件中，所以使用一次就好，不要多次使用，不然 fish 的配置文件末尾会被追加一堆内容。如果使用后还是不能正常 make ，建议重启试试。同样，如果你后面使用了 navy-apps ，就回来再使用一次下面这个命令：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;^\s*export\s+(NAVY_HOME)=&#39;</span><span class="w"> </span>~/.bashrc<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/export/set -x/; s/=/ /&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.config/fish/config.fish
 </code></pre></div>
 <p>经历了前面这些小小的麻烦事后，你就拥有了一个方便好用的 fish 了，相信它（以及这段安装工具的经历）会在你后续的实验里发挥重要作用！</p>
 <hr />
+<div class="admonition note">
+<p class="admonition-title">总结</p>
+<p>正如我们前面的文档中有说到过的，计算机领域的一个典型思路是“出现某一个需求→找到合适的工具→解决该需求”，因为这个世界上有很多人也在进行开发，所以绝大部分情况下，我们都不需要自己写一个工具，而是可以借用别人写好了的现成的工具。</p>
+<p>以及，像我们上一篇文档中所说，程序设计的意义就是自动化，让技术解放人的重复劳动，不然，计算机就没有应用的意义了。</p>
+</div>
 <div class="admonition success">
 <p class="admonition-title">PA1 到此结束</p>
 <p>收拾收拾，准备前往 PA2 吧。</p>
@@ -2901,7 +2923,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年9月29日 20:13:06 CST">2025年9月29日 20:13:06</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2025年10月5日 22:07:14 CST">2025年10月5日 22:07:14</span>
   </span>
 
     
