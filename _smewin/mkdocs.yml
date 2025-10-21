@@ -81,6 +81,9 @@ nav:
       - 面向对象: cs/fop/index.md
     - 通修:
       - 简介: general/index.md
+    - 转工管群在线服务:
+      - 简介: cloud/index.md
+      - 转工管群OJ平台: cloud/oj.md
     - ISGSNSG:
       - 简介: sec/index.md
 
