@@ -27,6 +27,8 @@ nav:
     - 自动化:
       - 简介: auto/index.md
       - 自动化导论(SME): auto/aai/index.md
+      - 普通物理: auto/gp1/index.md
+      - 电路分析: auto/ca/index.md
     - CS:
       - 简介: cs/cs.md
       - ICS: 
@@ -103,6 +105,7 @@ theme:
   favicon: pic/logo.png  # 图标路径
   features:
     - navigation.tabs # 启用顶级部分将呈现在上面视口标题下方的菜单层中，但在移动设备上保持原样
+    - math
   icon:
     admonition:
       note: octicons/tag-16

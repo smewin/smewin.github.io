@@ -1,6 +1,10 @@
 # 运筹学I
 
+---
+
 [这里](https://njuwallspider.github.io/IECourseGuide/%E4%B8%93%E4%B8%9A%E6%A0%B8%E5%BF%83%E8%AF%BE/%E8%BF%90%E7%AD%B9%E5%AD%A6%E2%85%A0/)有优秀学长留下的指南。
+
+【转工管群标准化试卷】[2025年秋学期期中试卷](./2025年工程管理学院运筹学I期中试题.pdf)
 
 ---
 
