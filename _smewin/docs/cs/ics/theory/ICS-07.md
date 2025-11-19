@@ -4,7 +4,7 @@
 
 ---
 
-习题解答仅供参考，如有问题或获取Markdown版本，请移步github仓库货联系转工管群ISGSNSG。
+习题解答仅供参考，如有问题或获取Markdown版本，请移步github仓库或联系转工管群ISGSNSG。
 
 ---
 
