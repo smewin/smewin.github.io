@@ -1,6 +1,10 @@
 site_name: 转工管群 Wiki
 site_description: 转工管群群页面
 site_url: https://smewin.github.io/
+
+repo_url: https://github.com/smewin/smewin.github.io
+repo_name: 转工管群 Wiki
+
 nav:
     - 主页: index.md
     - 简介: 
