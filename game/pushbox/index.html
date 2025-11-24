@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>疾旋鼬推箱子</title>
+<style>
+*{
+	margin:0px;
+	padding:0px;
+}
+body{
+	font-family: Arial, sans-serif;
+	background-color: #f4f4f9;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+.game{
+	width:560px;
+	background-color: #fff;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	text-align: center;
+}
+canvas {
+	border: 1px solid #ddd;
+	margin-bottom: 20px;
+	height: 530px; /* 恢复地图高度 */
+}
+#msg {
+	margin-bottom: 20px;
+	font-size: 18px;
+	color: #333;
+}
+input[type="button"] {
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 4px;
+	padding: 8px 16px;
+	font-size: 14px;
+	cursor: pointer;
+	margin: 5px;
+	transition: background-color 0.3s ease;
+}
+input[type="button"]:hover {
+	background-color: #0056b3;
+}
+.current-level-info {
+	margin-top: 20px;
+	text-align: left;
+}
+.current-level-info h3 {
+	margin-bottom: 10px;
+}
+.current-level-info p {
+	font-size: 16px;
+}
+.buttons-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+</style>
+</head>
+<body onkeydown="doKeyDown(event)">
+	<div class="game">
+		<canvas id="canvas" width="560" height="560"></canvas>
+		<div id="msg"></div>
+		<div class="buttons-container">
+			<input type="button" value="上一关" onClick="NextLevel(-1)">
+			<input type="button" value="下一关" onClick="NextLevel(1)">
+			<input type="button" value="重玩本关" onClick="NextLevel(0)">
+			<input type="button" value="游戏说明" onClick="showHelp()">
+			<input type="button" value="返回首页" onClick="window.location.href='/'">
+		</div>
+		<div class="current-level-info">
+			<p id="minStepsInfo"></p>
+			<p id="completionMessage"></p>
+		</div>
+	</div>
+
+<script src="js/mapdata100.js"></script>
+<script>
+	var can = document.getElementById("canvas");
+	var msg = document.getElementById("msg");
+	var cxt = can.getContext("2d");
+	var w = 35,h = 35; // 恢复单元格大小
+	var curMap;//当前的地图
+	var curLevel;//当前等级的地图
+	var curMan;//初始化小人
+	var iCurlevel = 0;//关卡数
+	var moveTimes = 0;//移动了多少次
+	var progressData;
+
+	// 初始化进度数据
+	function initProgress() {
+		const progressCookie = getCookie('progress');
+		if (!progressCookie) {
+			progressData = Array.from({ length: 100 }, () => ({ completed: false, minSteps: Infinity }));
+			setCookie('progress', JSON.stringify(progressData), 365);
+		} else {
+			progressData = JSON.parse(decodeURIComponent(progressCookie));
+		}
+		updateCompletionMessage();
+	}
+
+	// 获取 cookie 值
+	function getCookie(name) {
+	}
+
+	// 设置 cookie 值
+	function setCookie(name, value, days) {
+	}
+
+	// 更新完成消息
+	function updateCompletionMessage() {
+	}
+
+	// 预加载所有图片
+	var oImgs = {
+		"block" : "images/block.gif",
+		"wall" : "images/wall.png",
+		"box" : "images/box.png",
+		"ball" : "images/ball.png",
+		"up" : "images/up.png",
+		"down" : "images/down.png",
+		"left" : "images/left.png",
+		"right" : "images/right.png",
+	}
+	function imgPreload(srcs,callback){
+		var count = 0,imgNum = 0,images = {};
+
+		for(src in srcs){
+			imgNum++;
+		}
+		for(src in srcs ){
+			images[src] = new Image();
+			images[src].onload = function(){
+				//判断是否所有的图片都预加载完成
+				if (++count >= imgNum)
+				{
+					callback(images);
+				}
+			}
+			images[src].src = srcs[src];
+		}
+	}
+	var block,wall,box,ball,up,down,left,right;
+	imgPreload(oImgs,function(images){
+		block = images.block;
+		wall = images.wall;
+		box = images.box;
+		ball = images.ball;
+		up = images.up;
+		down = images.down;
+		left = images.left;
+		right = images.right;
+		init();
+	});
+
+	// 初始化游戏
+	function init(){
+		initProgress(); // 初始化进度数据
+		initLevel();//初始化对应等级的游戏
+		showMoveInfo();//初始化对应等级的游戏数据
+	}
+
+	// 绘制地板
+	function InitMap(){
+		for (var i=0;i<16 ;i++ )
+		{
+			for (var j=0;j<16 ;j++ )
+			{
+				cxt.drawImage(block,w*j,h*i,w,h);
+			}
+		}
+	}
+
+	// 小人位置坐标
+	function Point(x,y){
+		this.x = x;
+		this.y = y;
+	}
+	var perPosition = new Point(5,5);//小人的初始标值
+
+	// 绘制每个游戏关卡地图
+	function DrawMap(level){
+		for (var i=0;i<level.length ;i++ )
+		{
+			for (var j=0;j<level[i].length ;j++ )
+			{
+				var pic = block;//初始图片
+				switch (level[i][j])
+				{
+				case 1://绘制墙壁
+					pic = wall;
+					break;
+				case 2://绘制陷进
+					pic = ball;
+					break;
+				case 3://绘制箱子
+					pic = box;
+					break;
+				case 4://绘制小人
+					pic = curMan;//小人有四个方向 具体显示哪个图片需要和上下左右方位值关联
+					//获取小人的坐标位置
+					perPosition.x = i;
+					perPosition.y = j;
+					break;
+				case 5://绘制箱子及陷进位置
+					pic = box;
+					break;
+				}
+				//每个图片不一样宽 需要在对应地板的中心绘制地图
+				cxt.drawImage(pic,w*j-(pic.width-w)/2,h*i-(pic.height-h),pic.width,pic.height)
+			}
+		}
+	}
+
+	// 初始化游戏等级
+	function initLevel(){
+		curMap = copyArray(levels[iCurlevel]);//当前移动过的游戏地图
+		curLevel = levels[iCurlevel];//当前等级的初始地图
+		curMan = down;//初始化小人
+		InitMap();//初始化地板
+		DrawMap(curMap);//绘制出当前等级的地图
+		moveTimes = 0; // 重置移动次数
+		updateCompletionMessage(); // 更新完成消息
+	}
+
+	// 下一关
+	function NextLevel(i){
+		iCurlevel += i;
+		if (iCurlevel < 0) iCurlevel = 0;
+		if (iCurlevel > 99) iCurlevel = 99;
+		initLevel();//初始化当前等级关卡
+		moveTimes = 0;//游戏关卡移动步数清零
+		showMoveInfo();//初始化当前关卡数据
+	}
+
+	// 小人移动
+	function go(dir){
+		var p1,p2;
+		switch (dir)
+		{
+		case "up":
+			curMan = up;
+			p1 = new Point(perPosition.x-1,perPosition.y);
+			p2 = new Point(perPosition.x-2,perPosition.y);
+			break;
+		case "down":
+			curMan = down;
+			p1 = new Point(perPosition.x+1,perPosition.y);
+			p2 = new Point(perPosition.x+2,perPosition.y);
+			break;
+		case "left":
+			curMan = left;
+			p1 = new Point(perPosition.x,perPosition.y-1);
+			p2 = new Point(perPosition.x,perPosition.y-2);
+			break;
+		case "right":
+			curMan = right;
+			p1 = new Point(perPosition.x,perPosition.y+1);
+			p2 = new Point(perPosition.x,perPosition.y+2);
+			break;
+		}
+		if (Trygo(p1,p2))
+		{
+			moveTimes ++;
+			showMoveInfo();
+		}
+		InitMap();
+		DrawMap(curMap);
+		if (checkFinish())
+		{
+			msg.innerHTML = "恭喜过关！疾旋鼬谢谢你";
+			setTimeout(function() {
+				const currentProgress = progressData[iCurlevel];
+				currentProgress.completed = true;
+				if (moveTimes < currentProgress.minSteps) {
+					currentProgress.minSteps = moveTimes;
+				}
+				setCookie('progress', JSON.stringify(progressData), 365);
+				updateCompletionMessage(); // 更新完成消息
+				NextLevel(1);
+			}, 1000); // 延迟1秒后弹窗提示通关
+		}
+	}
+
+	// 判断是否推成功
+	function checkFinish(){
+		for (var i=0;i<curMap.length ;i++ )
+		{
+			for (var j=0;j<curMap[i].length ;j++ )
+			{
+				if (curLevel[i][j] == 2 && curMap[i][j] != 3 || curLevel[i][j] == 5 && curMap[i][j] != 3)
+				{
+					return false;
+				}
+			}
+		}
+		return true;
+	}
+
+	// 判断小人是否能够移动
+	function Trygo(p1,p2){
+		if(p1.x<0) return false;
+		if(p1.y<0) return false;
+		if(p1.x>=curMap.length) return false;
+		if(p1.y>=curMap[0].length) return false;
+		if(curMap[p1.x][p1.y]==1) return false;
+		if (curMap[p1.x][p1.y]==3 || curMap[p1.x][p1.y]==5)
+		{
+			if (curMap[p2.x][p2.y]==1 || curMap[p2.x][p2.y]==3)
+			{
+				return false;
+			}
+			curMap[p2.x][p2.y] = 3;
+		}
+		curMap[p1.x][p1.y] = 4;
+		var v = curLevel[perPosition.x][perPosition.y];
+		if (v!=2)
+		{
+			if (v==5)
+			{
+				v=2;
+			}else{
+				v=0;
+			}
+		}
+		// 重置小人位置的地图参数
+		curMap[perPosition.x][perPosition.y] = v;
+		// 若果判断小人前进了一步，更新坐标值
+		perPosition = p1;
+		// 若果小动了 返回true 指代能够移动小人
+		return true;
+	}
+
+	// 判断是否推成功
+	// 与键盘上的上下左右键关联
+	function doKeyDown(event){
+		switch (event.keyCode)
+		{
+		case 37://左键头
+			go("left");
+			break;
+		case 38://上键头
+			go("up");
+			break;
+		case 39://右箭头
+			go("right");
+			break;
+		case 40://下箭头
+			go("down");
+			break;
+		}
+	}
+
+	// 完善关卡数据及游戏说明
+	function showMoveInfo(){
+		msg.innerHTML = "第" + (iCurlevel+1) +"关 移动次数: "+ moveTimes;
+	}
+
+	// 游戏说明
+	var showhelp = false;
+	function showHelp(){
+		showhelp = !showhelp;
+		if (showhelp)
+		{
+			msg.innerHTML = "疾旋鼬推箱子";
+		}else{
+			showMoveInfo();
+		}
+	}
+
+	// 克隆二维数组
+	function copyArray(arr){
+		return JSON.parse(JSON.stringify(arr)); // 使用JSON.parse(JSON.stringify())实现深拷贝
+	}
+</script>
+
+<div style="text-align:center;clear:both">
+<script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
+<script src="/follow.js" type="text/javascript"></script>
+</div>
+</body>	
+</html>
+
+
+
