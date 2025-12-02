@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>喜庆祝福页面</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e, #ffafaf);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.2) 2px, transparent 2px),
+                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.2) 2px, transparent 2px);
+            background-size: 50px 50px;
+            z-index: -1;
+        }
+        
+        .initial-container {
+            max-width: 600px;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            z-index: 1;
+            transition: opacity 0.5s ease;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .gift-box {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 30px;
+            position: relative;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .gift-box:hover {
+            transform: scale(1.1);
+        }
+        
+        .gift-lid {
+            width: 150px;
+            height: 40px;
+            background: linear-gradient(to right, #ff6b6b, #ff8e8e);
+            border-radius: 10px 10px 0 0;
+            position: absolute;
+            top: 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gift-body {
+            width: 150px;
+            height: 110px;
+            background: linear-gradient(to right, #ff8e8e, #ffafaf);
+            border-radius: 0 0 10px 10px;
+            position: absolute;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gift-bow {
+            width: 30px;
+            height: 30px;
+            background: #ffd700;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            left: 60px;
+            box-shadow: 0 0 10px #ffd700;
+        }
+        
+        .message {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+        
+        .blessing-popup {
+            position: absolute;
+            background: linear-gradient(135deg, #ffd700, #ffed4e);
+            border-radius: 15px;
+            padding: 20px;
+            width: 280px;
+            max-width: 90vw;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            color: #b34d00;
+            text-align: center;
+            animation: popupAppear 0.5s ease-out;
+            z-index: 10;
+            cursor: move;
+        }
+        
+        @keyframes popupAppear {
+            0% { transform: scale(0.5); opacity: 0; }
+            70% { transform: scale(1.05); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        
+        .blessing-popup h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: #ff6b6b;
+        }
+        
+        .blessing-popup p {
+            font-size: 1.1rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+        
+        .close-btn {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: background 0.3s;
+        }
+        
+        .close-btn:hover {
+            background: #ff5252;
+        }
+        
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background: #ffd700;
+            opacity: 0.7;
+            animation: fall linear forwards;
+        }
+        
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .gift-box {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .gift-lid, .gift-body {
+                width: 120px;
+            }
+            
+            .gift-body {
+                height: 80px;
+            }
+            
+            .gift-bow {
+                left: 45px;
+            }
+            
+            .blessing-popup {
+                width: 250px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="initial-container" id="initialContainer">
+        <h1>你有一个礼物，需要打开吗？</h1>
+        <div class="gift-box" id="giftBox">
+            <div class="gift-lid"></div>
+            <div class="gift-body">
+                <div class="gift-bow"></div>
+            </div>
+        </div>
+        <p class="message">点击上面的礼物盒，接收祝福！</p>
+    </div>
+    
+    <script>
+        // 祝福语数组
+        const blessings = [
+            { title: "幸福安康", message: "愿你生活美满，幸福安康，每一天都充满阳光和快乐！" },
+            { title: "事业顺利", message: "祝你在事业上步步高升，一帆风顺，取得辉煌成就！" },
+            { title: "心想事成", message: "愿你的每一个愿望都能实现，心想事成，美梦成真！" },
+            { title: "健康长寿", message: "祝你身体健康，精神饱满，活力四射，长命百岁！" },
+            { title: "财源广进", message: "愿你财源滚滚，富贵吉祥，金钱源源不断涌向你！" },
+            { title: "家庭和睦", message: "祝你和家人和睦相处，温馨幸福，共享天伦之乐！" },
+            { title: "友谊长存", message: "愿我们的友谊地久天长，无论距离多远，心永远相连！" },
+            { title: "学业进步", message: "祝你在学业上不断进步，金榜题名，前程似锦！" },
+            { title: "爱情甜蜜", message: "愿你找到真爱，甜蜜幸福，与心爱的人白头偕老！" },
+            { title: "万事如意", message: "祝你事事顺心，万事如意，生活中没有烦恼和忧愁！" },
+            { title: "笑口常开", message: "愿你每天都开心快乐，笑容常伴，心情愉悦！" },
+            { title: "心想事成", message: "愿你的梦想都能成真，心想事成，前途光明！" },
+            { title: "平安喜乐", message: "祝你平平安安，喜乐常伴，生活充满温馨与幸福！" },
+            { title: "福星高照", message: "愿福星永远照耀着你，好运连连，幸福永驻！" },
+            { title: "吉星高照", message: "祝你吉星高照，好运不断，事事顺心如意！" },
+            { title: "大吉大利", message: "愿你大吉大利，好运连连，生活幸福美满！" },
+            { title: "花开富贵", message: "祝你花开富贵，前程似锦，生活充满美好！" },
+            { title: "金玉满堂", message: "愿你金玉满堂，财富充裕，生活富足安康！" },
+            { title: "年年有余", message: "祝你年年有余，生活富裕，幸福长长久久！" },
+            { title: "龙马精神", message: "愿你精神饱满，活力四射，事业蒸蒸日上！" },
+            { title: "鹏程万里", message: "祝你前程似锦，鹏程万里，事业腾飞！" },
+            { title: "步步高升", message: "愿你事业步步高升，职位不断提升，成就非凡！" },
+            { title: "锦上添花", message: "祝你好事连连，锦上添花，生活更加美好！" },
+            { title: "喜气洋洋", message: "愿你喜气洋洋，快乐无限，生活充满欢笑！" },
+            { title: "福如东海", message: "祝你福如东海，寿比南山，幸福长长久久！" },
+            { title: "寿比南山", message: "愿你健康长寿，寿比南山，享受美好人生！" },
+            { title: "阖家欢乐", message: "祝你全家欢乐，幸福美满，共享天伦之乐！" },
+            { title: "吉祥如意", message: "愿你吉祥如意，好运常伴，生活顺心顺意！" },
+            { title: "美梦成真", message: "祝你的美梦都能成真，心想事成，前程似锦！" },
+            { title: "天天开心", message: "愿你天天开心，笑容常伴，生活充满快乐！" }
+        ];
+        
+        // 获取DOM元素
+        const initialContainer = document.getElementById('initialContainer');
+        const giftBox = document.getElementById('giftBox');
+        
+        // 创建五彩纸屑
+        function createConfetti() {
+            const colors = ['#ffd700', '#ff6b6b', '#4ecdc4', '#6a0572', '#1a936f'];
+            for (let i = 0; i < 100; i++) {
+                const confetti = document.createElement('div');
+                confetti.className = 'confetti';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                confetti.style.animationDelay = Math.random() * 2 + 's';
+                document.body.appendChild(confetti);
+                
+                // 动画结束后移除元素
+                setTimeout(() => {
+                    confetti.remove();
+                }, 5000);
+            }
+        }
+        
+        // 使弹窗可拖动
+        function makeDraggable(element) {
+            let pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+            
+            element.onmousedown = dragMouseDown;
+            
+            function dragMouseDown(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // 获取鼠标初始位置
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                document.onmouseup = closeDragElement;
+                document.onmousemove = elementDrag;
+            }
+            
+            function elementDrag(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // 计算新位置
+                pos1 = pos3 - e.clientX;
+                pos2 = pos4 - e.clientY;
+                pos3 = e.clientX;
+                pos4 = e.clientY;
+                // 设置元素新位置
+                element.style.top = (element.offsetTop - pos2) + "px";
+                element.style.left = (element.offsetLeft - pos1) + "px";
+            }
+            
+            function closeDragElement() {
+                // 停止移动
+                document.onmouseup = null;
+                document.onmousemove = null;
+            }
+        }
+        
+        // 显示多个祝福弹窗
+        function showBlessingPopups() {
+            // 隐藏初始容器
+            initialContainer.style.opacity = '0';
+            setTimeout(() => {
+                initialContainer.style.display = 'none';
+            }, 500);
+            
+            // 创建五彩纸屑效果
+            createConfetti();
+            
+            // 创建30个弹窗
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const randomIndex = Math.floor(Math.random() * blessings.length);
+                    const blessing = blessings[randomIndex];
+                    
+                    // 创建弹窗元素
+                    const popup = document.createElement('div');
+                    popup.className = 'blessing-popup';
+                    
+                    // 随机位置，确保在可视区域内
+                    const maxLeft = window.innerWidth - 300;
+                    const maxTop = window.innerHeight - 200;
+                    const left = Math.max(20, Math.min(maxLeft, Math.random() * maxLeft));
+                    const top = Math.max(20, Math.min(maxTop, Math.random() * maxTop));
+                    
+                    popup.style.left = left + 'px';
+                    popup.style.top = top + 'px';
+                    
+                    // 随机旋转角度，增加视觉多样性
+                    const rotation = (Math.random() * 10) - 5; // -5到5度
+                    popup.style.transform = `rotate(${rotation}deg)`;
+                    
+                    // 设置弹窗内容
+                    popup.innerHTML = `
+                        <h3>${blessing.title}</h3>
+                        <p>${blessing.message}</p>
+                        <button class="close-btn">关闭</button>
+                    `;
+                    
+                    // 添加到页面
+                    document.body.appendChild(popup);
+                    
+                    // 使弹窗可拖动
+                    makeDraggable(popup);
+                    
+                    // 添加关闭按钮事件
+                    const closeBtn = popup.querySelector('.close-btn');
+                    closeBtn.addEventListener('click', () => {
+                        popup.style.animation = 'popupAppear 0.3s ease-in reverse';
+                        setTimeout(() => {
+                            popup.remove();
+                        }, 300);
+                    });
+                }, i * 100); // 间隔100ms创建弹窗，形成连续出现的效果
+            }
+        }
+        
+        // 事件监听
+        giftBox.addEventListener('click', showBlessingPopups);
+        
+        // 窗口大小变化时调整弹窗位置
+        window.addEventListener('resize', () => {
+            const popups = document.querySelectorAll('.blessing-popup');
+            popups.forEach(popup => {
+                const maxLeft = window.innerWidth - 300;
+                const maxTop = window.innerHeight - 200;
+                let left = parseInt(popup.style.left);
+                let top = parseInt(popup.style.top);
+                
+                // 确保弹窗在可视区域内
+                if (left > maxLeft) popup.style.left = maxLeft + 'px';
+                if (top > maxTop) popup.style.top = maxTop + 'px';
+            });
+        });
+    </script>
+</body>
+</html>
