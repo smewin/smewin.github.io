@@ -76,6 +76,7 @@ nav:
         - PA+:
           - 简介: cs/ics_riscv/PA_plus/index.md
           - PA+1：表达式生成器: cs/ics_riscv/PA_plus/PA_plus1.md
+          - PA+2：性能优化: cs/ics_riscv/PA_plus/PA_plus2.md
         - PA现场赛:
           - 简介: cs/ics_riscv/competition/index.md
         - labs:
