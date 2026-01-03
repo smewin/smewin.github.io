@@ -13,3 +13,19 @@
 此致
 
 转工管群ISGSNSG
+
+---
+
+**Dear User**:
+
+Hello.
+
+We have some difficult decisions to make: **We regret to inform you that, in accordance with our latest business adjustments and policy requirements, we will no longer be providing related services.**
+
+This is a well-considered decision. We understand how important this service is to you, and we sincerely apologize for any inconvenience this may cause. We thank you for your continued support and trust.
+
+Thank you again for your continued support.
+
+Sincerely yours
+
+SISGSNSG
