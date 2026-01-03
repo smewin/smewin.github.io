@@ -5,8 +5,6 @@
 
     本材料为`Github`用户`NJUXt007`仓库`南京大学计算机与金融实验班`相关内容的镜像，原仓库链接`github.com/NJUXt007/NJU-Computer-Science-and-Finance-Experimental-Class`。点击[这里](https://github.com/NJUXt007/NJU-Computer-Science-and-Finance-Experimental-Class)可以访问原仓库。同时，该仓库所有者运营QQ群NJU计金开源资料群`1048736448`，您可以通过加入该QQ群的方式，获取与本资料有关的更进一步的资讯与答疑，或与作者取得联系。
 
-    本资料的作者为`23计金张潇腾`。
-
     如有侵权请告知我们，我们将立即删除或修正。
 
 ---
@@ -44,7 +42,7 @@
 
 [重点](./财务会计与管理决策重点.docx)
 
-【转工管群标准化试卷】[2025年期末试卷](./2025年工程管理学院财务会计与管理决策期末试题.pdf)
+【转工管群标准化试卷】[2025年期末试卷](../../sme_intro/policy.md)
 
 ## 课程相关
 
