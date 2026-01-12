@@ -25,6 +25,8 @@
 
 [数据结构与算法设计](../cs/dsa/dsa.md)
 
+[概率论](../ie/ProbabilityTheory/index.md)
+
 ### 学科专业
 
 [自动化导论](./aai/index.md)

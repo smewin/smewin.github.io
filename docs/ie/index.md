@@ -12,6 +12,8 @@
 
 [数据结构与算法设计](../cs/dsa/dsa.md)
 
+[概率论](./ProbabilityTheory/index.md)
+
 ## 学科专业
 
 [运筹学I](./or1/index.md)

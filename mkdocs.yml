@@ -22,6 +22,7 @@ nav:
       - 经济学原理: fe/pe/index.md
     - 工业工程:
       - 简介: ie/index.md
+      - 概率论: ie/ProbabilityTheory/index.md
       - 运筹学I: ie/or1/index.md
       - 运筹学II: ie/or2/index.md
       - 基础工业工程: ie/bie/index.md
