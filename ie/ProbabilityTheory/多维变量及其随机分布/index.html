@@ -4889,26 +4889,26 @@ $$</p>
 即 <span class="arithmatex">\(X \sim \Gamma(\alpha,\theta), Y \sim \Gamma(\beta,\theta) \Rightarrow X+Y \sim \Gamma(\alpha+\beta,\theta)\)</span>。</p>
 </blockquote>
 <h3 id="zxy_1">Z=X/Y</h3>
-<p>设 <span class="arithmatex">\((X,Y)\)</span> 的密度函数为 <span class="arithmatex">\(f(x,y)\)</span>，求 <span class="arithmatex">\(Z=\frac{X}{Y}\)</span> 的分布函数：
-$$
-F_Z(z)=P\left{ \frac{X}{Y}\le z \right}=P{(X,Y)\in G}, \quad \text{其中 } G=\left{ (x,y) \mid \frac{x}{y}\le z \right}
-$$
-$$
+<p>设 <span class="arithmatex">\((X,Y)\)</span> 的密度函数为 <span class="arithmatex">\(f(x,y)\)</span>，求 <span class="arithmatex">\(Z=\frac{X}{Y}\)</span> 的分布函数：</p>
+<div class="arithmatex">\[
+F_Z(z)=P\left\{ \frac{X}{Y}\le z \right\}=P\{(X,Y)\in G\}, \quad \text{其中} G=\left\{ (x,y) \mid \frac{x}{y}\le z \right\}
+\]</div>
+<div class="arithmatex">\[
 \begin{aligned}
-F_Z(z) &amp;= \iint_{\frac{x}{y}\le z}f(x,y)dxdy \
-&amp;= \int_0^{+\infty}\left[\int^{yz}<em>{-\infty}f(x,y)dx\right]dy + \int</em>{-\infty}^0\left[\int_{-\infty}^{yz}f(x,y)dx\right]dy
+F_Z(z) &amp;= \iint_{\frac{x}{y}\le z}f(x,y)dxdy \\
+&amp;= \int_0^{+\infty}\left[\int^{yz}_{-\infty}f(x,y)dx\right]dy + \int_{-\infty}^0\left[\int_{-\infty}^{yz}f(x,y)dx\right]dy
 \end{aligned}
-$$
-概率密度为：
-$$
-f_Z(z)=F'<em>Z(z)=\int_0^{+\infty}f(zy,y)ydy+\int</em>{-\infty}^0f(zy,y)(-y)dy=\int_{-\infty}^{+\infty}f(zy,y)|y|dy
-$$
-当 <span class="arithmatex">\(X,Y\)</span> 相互独立时，<span class="arithmatex">\(f_Z(z)=\int_{-\infty}^{+\infty}f_X(zy)f_Y(y)|y|dy\)</span>。</p>
+\]</div>
+<p>概率密度为：</p>
+<div class="arithmatex">\[
+f_Z(z)=F'_Z(z)=\int_0^{+\infty}f(zy,y)ydy+\int_{-\infty}^0f(zy,y)(-y)dy=\int_{-\infty}^{+\infty}f(zy,y)|y|dy
+\]</div>
+<p>当 <span class="arithmatex">\(X,Y\)</span> 相互独立时，<span class="arithmatex">\(f_Z(z)=\int_{-\infty}^{+\infty}f_X(zy)f_Y(y)|y|dy\)</span>。</p>
 <h3 id="mmaxxy-nminxy">M=max{X,Y}, N=min{X,Y}</h3>
 <div class="arithmatex">\[
 F_M(z)=P\{\max\{X,Y\}\le z\}=P\{X\le z, Y\le z\}=F_X(z)\cdot F_Y(z)
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 F_N(z)=P\{\min\{X,Y\}\le z\}=1-P\{\min\{X,Y\}\ge z\}=1-(1-F_X(z))(1-F_Y(z))
 \]</div>
 <h1 id="_19">随机变量函数的联合分布</h1>
@@ -4973,15 +4973,15 @@ f_{Y_1,Y_2}(y_1,y_2)=\frac{1}{2}f_{X_1,X_2}\left( \frac{y_1+y_2}{2}, \frac{y_1-y
 <h3 id="_22">独立性</h3>
 <div class="arithmatex">\[
 F(x_1,\dots,x_n)=F_{X_1}(x_1)\cdot F_{X_2}(x_2)\cdots F_{X_n}(x_n) \Leftrightarrow X_1,\dots,X_n \text{ 相互独立}
-$$
-* 对于 **离散型** 随机变量，相互独立充要条件为：
-    $$
-    P\{X_1=a_{i1},\dots,X_n=a_{in}\}=P\{X_1=a_{i1}\}\cdots P\{X_n=a_{in}\}
-    $$
-* 对于 **连续型** 随机变量，相互独立的充要条件为：
-    $$
-    f(x_1,\dots,x_n)=f_{X_1}(x_1)\cdots f_{X_n}(x_n)
-    \]</div>
+\]</div>
+<p>对于 <strong>离散型</strong> 随机变量，相互独立充要条件为：</p>
+<div class="arithmatex">\[
+P\{X_1=a_{i1},\dots,X_n=a_{in}\}=P\{X_1=a_{i1}\}\cdots P\{X_n=a_{in}\}
+\]</div>
+<p>对于 <strong>连续型</strong> 随机变量，相互独立的充要条件为：</p>
+<div class="arithmatex">\[
+f(x_1,\dots,x_n)=f_{X_1}(x_1)\cdots f_{X_n}(x_n)
+\]</div>
 <h2 id="_23">重要结论</h2>
 <h3 id="_24">正态变量之和分布</h3>
 <p>设 <span class="arithmatex">\(X_k \sim N(\mu_k, \sigma_k^2)\)</span>，且 <span class="arithmatex">\(X_1,\dots,X_n\)</span> 相互独立，则：
@@ -4989,15 +4989,15 @@ $$
 X_1+\cdots+X_n \sim N\left(\sum_{k=1}^n \mu_k, \sum_{k=1}^n \sigma_k^2\right)
 $$</p>
 <h3 id="_25">标准正态变量的平方和的分布</h3>
-<p>设 <span class="arithmatex">\(X_1,\dots,X_n\)</span> 相互独立，且均服从 <span class="arithmatex">\(N(0,1)\)</span>，则 <span class="arithmatex">\(Y=\sum_{i=1}^n X_i^2\)</span> 服从自由度为 <span class="arithmatex">\(n\)</span> 的 <span class="arithmatex">\(\chi^2\)</span> 分布，它的概率密度为：
-$$
+<p>设 <span class="arithmatex">\(X_1,\dots,X_n\)</span> 相互独立，且均服从 <span class="arithmatex">\(N(0,1)\)</span>，则 <span class="arithmatex">\(Y=\sum_{i=1}^n X_i^2\)</span> 服从自由度为 <span class="arithmatex">\(n\)</span> 的 <span class="arithmatex">\(\chi^2\)</span> 分布，它的概率密度为：</p>
+<div class="arithmatex">\[
 f(y)=\frac 1 {2^{n/2}\Gamma\left( \frac{n}{2} \right)}y^{\frac n 2-1}e^{-\frac y 2}, \quad y&gt;0
-$$</p>
+\]</div>
 <h3 id="_26">最大值与最小值的分布</h3>
 <div class="arithmatex">\[
 F_M(z)=\prod_{i=1}^n F_i(z)
-$$
-$$
+\]</div>
+<div class="arithmatex">\[
 F_N(z)=1-\prod_{i=1}^n (1-F_i(z))
 \]</div>
 
@@ -5020,7 +5020,7 @@ F_N(z)=1-\prod_{i=1}^n (1-F_i(z))
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年1月12日 11:22:16 CST">2026年1月12日 11:22:16</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年1月12日 11:40:42 CST">2026年1月12日 11:40:42</span>
   </span>
 
     
