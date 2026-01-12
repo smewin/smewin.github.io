@@ -4800,7 +4800,7 @@ $$</p>
 <h2 id="_6">二维正态分布</h2>
 <p>设二维随机变量 <span class="arithmatex">\((X,Y)\)</span> 具有概率密度：
 $$
-f(x,y)=\frac 1 {2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}} \exp\left{-\frac 1 {2(1-\rho^2)} \left[\frac {(x-\mu_1)^2} {\sigma_1^2}-2\rho \frac {(x-\mu_1)(y-\mu_2)} {\sigma_1\sigma_2} +\frac {(y-\mu_2)^2} {\sigma_2^2}\right]\right}
+f(x,y)=\frac 1 {2\pi\sigma_1\sigma_2\sqrt{1-\rho^2}} \exp{-\frac 1 {2(1-\rho^2)} [\frac {(x-\mu_1)^2} {\sigma_1^2}-2\rho \frac {(x-\mu_1)(y-\mu_2)} {\sigma_1\sigma_2} +\frac {(y-\mu_2)^2} {\sigma_2^2}]}
 $$
 其中 <span class="arithmatex">\(\mu_1, \mu_2, \sigma_1(&gt;0), \sigma_2(&gt;0), \rho(|\rho|&lt;1)\)</span> 均为常数，则称 <span class="arithmatex">\((X,Y)\)</span> 服从参数为 <span class="arithmatex">\(\mu_1, \mu_2, \sigma_1, \sigma_2, \rho\)</span> 的二维正态分布，记为 <span class="arithmatex">\((X,Y) \sim N(\mu_1, \mu_2, \sigma_1^2, \sigma_2^2, \rho)\)</span>。</p>
 <h1 id="_7">边缘分布</h1>
@@ -4821,7 +4821,7 @@ $$
 <h2 id="_9">边缘概率密度</h2>
 <p>设二维连续型 r.v. <span class="arithmatex">\((X,Y)\)</span>，概率密度为 <span class="arithmatex">\(f(x,y)\)</span>。<span class="arithmatex">\(X, Y\)</span> 的概率密度 <span class="arithmatex">\(f_X(x), f_Y(y)\)</span> 分别称为 <span class="arithmatex">\((X,Y)\)</span> 关于 <span class="arithmatex">\(X, Y\)</span> 的边缘概率密度。
 $$
-F_X(x)=F(x,+\infty)=\int_{-\infty}^x \left[\int^{+\infty}<em>{-\infty}f(u,y)dy\right] du
+F_X(x)=F(x,+\infty)=\int_{-\infty}^x [\int^{+\infty}<em>{-\infty}f(u,y)dy] du
 $$
 所以，关于 <span class="arithmatex">\(X\)</span> 的边缘概率密度为：
 $$
@@ -4856,10 +4856,10 @@ $$
 若记 <span class="arithmatex">\(f_{X|Y}(x|y)=\frac {f(x,y)}{f_Y(y)}\)</span>，则称其为在 <span class="arithmatex">\(Y=y\)</span> 条件下 <span class="arithmatex">\(X\)</span> 的条件概率密度。</p>
 <h1 id="_14">互相独立的随机变量</h1>
 <div class="arithmatex">\[
-F(x,y)=F_X(x) F_Y(y) \Leftrightarrow X, Y \text{ 相互独立}
+F(x,y)=F_X(x) F_Y(y) rightarrow X, Y \text{ 相互独立}
 \]</div>
 <h2 id="_15">离散型</h2>
-<p>若二维离散型 r.v. <span class="arithmatex">\((X,Y)\)</span>，则 <span class="arithmatex">\(p_{ij}=p_{i\cdot}p_{\cdot j} \Leftrightarrow X, Y\)</span> 相互独立。</p>
+<p>若二维离散型 r.v. <span class="arithmatex">\((X,Y)\)</span>，则 <span class="arithmatex">\(p_{ij}=p_{i\cdot}p_{\cdot j} rightarrow X, Y\)</span> 相互独立。</p>
 <h2 id="_16">连续型</h2>
 <p>若二维连续型 r.v. <span class="arithmatex">\((X,Y)\)</span>，则 <span class="arithmatex">\(f(x,y)=f_X(x) \cdot f_Y(y)\)</span>。</p>
 <blockquote>
@@ -4886,17 +4886,17 @@ f_Z(z)=f_X(x)*f_Y(y)=\int_{-\infty}^{+\infty}f_X(x)f_Y(z-x)dx=\int_{-\infty}^{+\
 $$</p>
 <blockquote>
 <p><strong>性质</strong>：若 <span class="arithmatex">\(X,Y\)</span> 相互独立，且分别服从参数为 <span class="arithmatex">\(\alpha,\theta\)</span>；<span class="arithmatex">\(\beta,\theta\)</span> 的 <span class="arithmatex">\(\Gamma\)</span> 分布，则 <span class="arithmatex">\(Z=X+Y\)</span> 服从参数为 <span class="arithmatex">\(\alpha+\beta, \theta\)</span> 的 <span class="arithmatex">\(\Gamma\)</span> 分布。
-即 <span class="arithmatex">\(X \sim \Gamma(\alpha,\theta), Y \sim \Gamma(\beta,\theta) \Rightarrow X+Y \sim \Gamma(\alpha+\beta,\theta)\)</span>。</p>
+即 <span class="arithmatex">\(X \sim \Gamma(\alpha,\theta), Y \sim \Gamma(\beta,\theta) arrow X+Y \sim \Gamma(\alpha+\beta,\theta)\)</span>。</p>
 </blockquote>
 <h3 id="zxy_1">Z=X/Y</h3>
 <p>设 <span class="arithmatex">\((X,Y)\)</span> 的密度函数为 <span class="arithmatex">\(f(x,y)\)</span>，求 <span class="arithmatex">\(Z=\frac{X}{Y}\)</span> 的分布函数：</p>
 <div class="arithmatex">\[
-F_Z(z)=P\left\{ \frac{X}{Y}\le z \right\}=P\{(X,Y)\in G\}, \quad \text{其中} G=\left\{ (x,y) \mid \frac{x}{y}\le z \right\}
+F_Z(z)=P\{ \frac{X}{Y}\le z \}=P\{(X,Y)\in G\}, \quad \text{其中} G=\{ (x,y) \mid \frac{x}{y}\le z \}
 \]</div>
 <div class="arithmatex">\[
 \begin{aligned}
 F_Z(z) &amp;= \iint_{\frac{x}{y}\le z}f(x,y)dxdy \\
-&amp;= \int_0^{+\infty}\left[\int^{yz}_{-\infty}f(x,y)dx\right]dy + \int_{-\infty}^0\left[\int_{-\infty}^{yz}f(x,y)dx\right]dy
+&amp;= \int_0^{+\infty}[\int^{yz}_{-\infty}f(x,y)dx]dy + \int_{-\infty}^0[\int_{-\infty}^{yz}f(x,y)dx]dy
 \end{aligned}
 \]</div>
 <p>概率密度为：</p>
@@ -4927,7 +4927,7 @@ $$
 其中 <span class="arithmatex">\(x_1=h_1(y_1,y_2), x_2=h_2(y_1,y_2)\)</span>。</p>
 <h2 id="y1x1x2-y2x1-x2">Y1=X1+X2, Y2=X1-X2</h2>
 <div class="arithmatex">\[
-f_{Y_1,Y_2}(y_1,y_2)=\frac{1}{2}f_{X_1,X_2}\left( \frac{y_1+y_2}{2}, \frac{y_1-y_2}{2} \right)
+f_{Y_1,Y_2}(y_1,y_2)=\frac{1}{2}f_{X_1,X_2}( \frac{y_1+y_2}{2}, \frac{y_1-y_2}{2} )
 \]</div>
 <ul>
 <li>如果 <span class="arithmatex">\(X_1, X_2\)</span> 为独立同分布的 <span class="arithmatex">\((0,1)\)</span> 均匀随机变量，则：
@@ -4972,7 +4972,7 @@ f_{Y_1,Y_2}(y_1,y_2)=\frac{1}{2}f_{X_1,X_2}\left( \frac{y_1+y_2}{2}, \frac{y_1-y
 </ul>
 <h3 id="_22">独立性</h3>
 <div class="arithmatex">\[
-F(x_1,\dots,x_n)=F_{X_1}(x_1)\cdot F_{X_2}(x_2)\cdots F_{X_n}(x_n) \Leftrightarrow X_1,\dots,X_n \text{ 相互独立}
+F(x_1,\dots,x_n)=F_{X_1}(x_1)\cdot F_{X_2}(x_2)\cdots F_{X_n}(x_n) rightarrow X_1,\dots,X_n \text{ 相互独立}
 \]</div>
 <p>对于 <strong>离散型</strong> 随机变量，相互独立充要条件为：</p>
 <div class="arithmatex">\[
@@ -4986,12 +4986,12 @@ f(x_1,\dots,x_n)=f_{X_1}(x_1)\cdots f_{X_n}(x_n)
 <h3 id="_24">正态变量之和分布</h3>
 <p>设 <span class="arithmatex">\(X_k \sim N(\mu_k, \sigma_k^2)\)</span>，且 <span class="arithmatex">\(X_1,\dots,X_n\)</span> 相互独立，则：
 $$
-X_1+\cdots+X_n \sim N\left(\sum_{k=1}^n \mu_k, \sum_{k=1}^n \sigma_k^2\right)
+X_1+\cdots+X_n \sim N(\sum_{k=1}^n \mu_k, \sum_{k=1}^n \sigma_k^2)
 $$</p>
 <h3 id="_25">标准正态变量的平方和的分布</h3>
 <p>设 <span class="arithmatex">\(X_1,\dots,X_n\)</span> 相互独立，且均服从 <span class="arithmatex">\(N(0,1)\)</span>，则 <span class="arithmatex">\(Y=\sum_{i=1}^n X_i^2\)</span> 服从自由度为 <span class="arithmatex">\(n\)</span> 的 <span class="arithmatex">\(\chi^2\)</span> 分布，它的概率密度为：</p>
 <div class="arithmatex">\[
-f(y)=\frac 1 {2^{n/2}\Gamma\left( \frac{n}{2} \right)}y^{\frac n 2-1}e^{-\frac y 2}, \quad y&gt;0
+f(y)=\frac 1 {2^{n/2}\Gamma( \frac{n}{2} )}y^{\frac n 2-1}e^{-\frac y 2}, \quad y&gt;0
 \]</div>
 <h3 id="_26">最大值与最小值的分布</h3>
 <div class="arithmatex">\[
@@ -5020,7 +5020,7 @@ F_N(z)=1-\prod_{i=1}^n (1-F_i(z))
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年1月12日 11:40:42 CST">2026年1月12日 11:40:42</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年1月12日 11:50:42 CST">2026年1月12日 11:50:42</span>
   </span>
 
     
