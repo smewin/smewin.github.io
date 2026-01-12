@@ -1100,14 +1100,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../概率的基本概念.md" class="md-nav__link">
+      <a href="../%E6%A6%82%E7%8E%87%E8%AE%BA%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    概率的基本概念
+    概率论的基本概念
   
 
     
@@ -3928,148 +3928,241 @@
 
 <h1 id="_1">随机变量的数学期望</h1>
 <h2 id="_2">离散型</h2>
-<p><span class="arithmatex">\(设离散型r.v.X的分布律为：P\{X=x_k\}=p_k,若级数\Sigma_{k=1}^\infty x_kp_k绝对收敛，则称该级数为随机变量的数学期望(平均值),记作E(X)，即E(X)=\Sigma_{k=1}^\infty x_kp_k否则称X的数学期望不存在\)</span></p>
+<p>设离散型 r.v. <span class="arithmatex">\(X\)</span> 的分布律为：<span class="arithmatex">\(P\{X=x_k\}=p_k\)</span>。若级数 <span class="arithmatex">\(\sum_{k=1}^\infty x_kp_k\)</span> 绝对收敛，则称该级数为随机变量的数学期望（平均值），记作 <span class="arithmatex">\(E(X)\)</span>，即：
+$$
+E(X)=\sum_{k=1}^\infty x_kp_k
+$$
+否则称 <span class="arithmatex">\(X\)</span> 的数学期望不存在。</p>
 <h3 id="_3">常见的离散型随机变量期望值</h3>
 <ol>
-<li>0-1分布
-    <span class="arithmatex">\(设X服从(0-1)分布，P\{X=1\}=p,则E(X)=p\)</span></li>
-<li>二项分布
-    <span class="arithmatex">\(设X\)</span>~<span class="arithmatex">\(b(n,p),P\{X=k\}=C_n^kp^k(1-p)^{n-k},E(X)=np\)</span></li>
-<li>泊松分布
-    <span class="arithmatex">\(设X\)</span>~<span class="arithmatex">\(\pi(\lambda),P\{X=k\}=\frac {\lambda^k}{k!}e^{-\lambda},E(X)=\lambda\)</span></li>
-<li>几何分布
-    第一次成功发生在第k次试验的概率,<span class="arithmatex">\(E(X)=\frac{1}{p}\)</span></li>
+<li><strong>0-1 分布</strong>
+    设 <span class="arithmatex">\(X\)</span> 服从 0-1 分布，<span class="arithmatex">\(P\{X=1\}=p\)</span>，则 <span class="arithmatex">\(E(X)=p\)</span>。</li>
+<li><strong>二项分布</strong>
+    设 <span class="arithmatex">\(X \sim b(n,p)\)</span>，<span class="arithmatex">\(P\{X=k\}=C_n^kp^k(1-p)^{n-k}\)</span>，则 <span class="arithmatex">\(E(X)=np\)</span>。</li>
+<li><strong>泊松分布</strong>
+    设 <span class="arithmatex">\(X \sim \pi(\lambda)\)</span>，<span class="arithmatex">\(P\{X=k\}=\frac {\lambda^k}{k!}e^{-\lambda}\)</span>，则 <span class="arithmatex">\(E(X)=\lambda\)</span>。</li>
+<li><strong>几何分布</strong>
+    第一次成功发生在第 <span class="arithmatex">\(k\)</span> 次试验的概率，<span class="arithmatex">\(E(X)=\frac{1}{p}\)</span>。</li>
 </ol>
 <h2 id="_4">连续型</h2>
-<p><span class="arithmatex">\(设f(x)为连续型随机变量X的概率密度，若积分\int_{-\infty}^{+\infty}xf(x)dx绝对收敛，称该积分的值为r.v.X的数学期望，记为E(X)=\int_{-\infty}^{+\infty}xf(x)dx\)</span></p>
+<p>设 <span class="arithmatex">\(f(x)\)</span> 为连续型随机变量 <span class="arithmatex">\(X\)</span> 的概率密度，若积分 <span class="arithmatex">\(\int_{-\infty}^{+\infty}xf(x)dx\)</span> 绝对收敛，称该积分的值为 r.v. <span class="arithmatex">\(X\)</span> 的数学期望，记为：
+$$
+E(X)=\int_{-\infty}^{+\infty}xf(x)dx
+$$</p>
 <h3 id="_5">常见的连续型随机变量期望值</h3>
 <ol>
-<li>均匀分布
-    <span class="arithmatex">\(设r.v.X服从[a,b]上的均匀分布，即X的密度函数为：f(x)=\frac{1}{b-a},a\le x\le b,则E(X)=\frac {a+b} 2\)</span></li>
-<li>指数分布
-    <span class="arithmatex">\(f(x)=\lambda e^{-\lambda x},E(X)=\frac{1}{\lambda}\)</span></li>
-<li>正态分布
-    <span class="arithmatex">\(X\)</span>~<span class="arithmatex">\(N(\mu,\sigma^2),E(X)=\mu\)</span></li>
-<li>柯西分布的数学期望不存在</li>
+<li><strong>均匀分布</strong>
+    设 r.v. <span class="arithmatex">\(X\)</span> 服从 <span class="arithmatex">\([a,b]\)</span> 上的均匀分布，即 <span class="arithmatex">\(X\)</span> 的密度函数为：<span class="arithmatex">\(f(x)=\frac{1}{b-a}, \quad a\le x\le b\)</span>，则 <span class="arithmatex">\(E(X)=\frac {a+b} 2\)</span>。</li>
+<li><strong>指数分布</strong>
+    <span class="arithmatex">\(f(x)=\lambda e^{-\lambda x}\)</span>，则 <span class="arithmatex">\(E(X)=\frac{1}{\lambda}\)</span>。</li>
+<li><strong>正态分布</strong>
+    <span class="arithmatex">\(X \sim N(\mu,\sigma^2)\)</span>，则 <span class="arithmatex">\(E(X)=\mu\)</span>。</li>
+<li><strong>柯西分布</strong>
+    柯西分布的数学期望不存在。</li>
 </ol>
 <h2 id="_6">变量函数的数学期望</h2>
-<p><span class="arithmatex">\(Y=g(X),对于离散型r.v.X的分布律为p_k=P\{X=x_k\},若\Sigma_{k=1}^{+\infty}x_kp_k绝对收敛，则E(Y)=E(g(X))=\Sigma_{k=1}^{+\infty}g(x)p_k；对于连续型r.v.X，概率密度为f(x),若\int_{-\infty}^{+\infty}g(x)f(x)dx绝对收敛，则E(Y)=E(g(X))=\int_{-infty}^{+\infty}g(x)f(x)dx\)</span>
-以上定理可推广到多维r.v.函数</p>
+<p>设 <span class="arithmatex">\(Y=g(X)\)</span>。
+* 对于离散型 r.v. <span class="arithmatex">\(X\)</span>，其分布律为 <span class="arithmatex">\(p_k=P\{X=x_k\}\)</span>，若 <span class="arithmatex">\(\sum_{k=1}^{+\infty}g(x_k)p_k\)</span> 绝对收敛，则：
+    $$
+    E(Y)=E(g(X))=\sum_{k=1}^{+\infty}g(x_k)p_k
+    $$
+* 对于连续型 r.v. <span class="arithmatex">\(X\)</span>，概率密度为 <span class="arithmatex">\(f(x)\)</span>，若 <span class="arithmatex">\(\int_{-\infty}^{+\infty}g(x)f(x)dx\)</span> 绝对收敛，则：
+    $$
+    E(Y)=E(g(X))=\int_{-\infty}^{+\infty}g(x)f(x)dx
+    $$</p>
+<p>以上定理可推广到多维 r.v. 函数。</p>
 <h2 id="_7">均值的性质</h2>
 <ol>
 <li><span class="arithmatex">\(E(c)=c\)</span></li>
 <li><span class="arithmatex">\(E(cX)=cE(X)\)</span></li>
 <li><span class="arithmatex">\(E(X+Y)=E(X)+E(Y)\)</span></li>
-<li><span class="arithmatex">\(设X、Y相互独立，则E(XY)=E(X)E(Y)\)</span></li>
-<li><span class="arithmatex">\(|E(XY)|^2\le E(X^2)E(Y^2)(许瓦尔兹不等式)\)</span></li>
+<li>设 <span class="arithmatex">\(X\)</span>、<span class="arithmatex">\(Y\)</span> 相互独立，则 <span class="arithmatex">\(E(XY)=E(X)E(Y)\)</span></li>
+<li><span class="arithmatex">\(|E(XY)|^2\le E(X^2)E(Y^2)\)</span> （许瓦尔兹不等式）</li>
 </ol>
+<hr />
 <h1 id="_8">条件期望</h1>
 <h2 id="_9">离散型</h2>
-<p><span class="arithmatex">\(当X和Y的联合分布为离散分布时，在给定Y=y条件之下，X的条件分布为p_{X|Y}(x|y)=\frac {p(x,y)}{p_Y(y)}\)</span>
-<span class="arithmatex">\(则X在Y=y条件下的条件期望为E(X|Y=y)=\Sigma_x x\cdot p_{X|Y}(x|y)\)</span></p>
+<p>当 <span class="arithmatex">\(X\)</span> 和 <span class="arithmatex">\(Y\)</span> 的联合分布为离散分布时，在给定 <span class="arithmatex">\(Y=y\)</span> 条件之下，<span class="arithmatex">\(X\)</span> 的条件分布为：
+$$
+p_{X|Y}(x|y)=\frac {p(x,y)}{p_Y(y)}
+$$
+则 <span class="arithmatex">\(X\)</span> 在 <span class="arithmatex">\(Y=y\)</span> 条件下的条件期望为：
+$$
+E(X|Y=y)=\sum_x x\cdot p_{X|Y}(x|y)
+$$</p>
 <h2 id="_10">连续型</h2>
-<p><span class="arithmatex">\(当X和Y的联合分布为连续分布，其联合密度函数为f(x,y)，对于给定的Y=y，f_{X|Y}(x|y)=\frac {f(x,y)} {f_Y(y)}\)</span></p>
+<p>当 <span class="arithmatex">\(X\)</span> 和 <span class="arithmatex">\(Y\)</span> 的联合分布为连续分布，其联合密度函数为 <span class="arithmatex">\(f(x,y)\)</span>，对于给定的 <span class="arithmatex">\(Y=y\)</span>：
+$$
+f_{X|Y}(x|y)=\frac {f(x,y)} {f_Y(y)}
+$$</p>
 <h2 id="_11">利用条件计算期望</h2>
-<p><span class="arithmatex">\(E(X)=E(E(X|Y))\)</span>
-<span class="arithmatex">\(E(X)=\Sigma_yE(X|Y=y)P\{Y=y\},E(X)=\int_{-\infty}^{+\infty}E(X|Y=y)f_Y(y)dy\)</span></p>
+<div class="arithmatex">\[
+E(X)=E(E(X|Y))
+$$
+$$
+E(X)=\sum_yE(X|Y=y)P\{Y=y\} \quad \text{或} \quad E(X)=\int_{-\infty}^{+\infty}E(X|Y=y)f_Y(y)dy
+\]</div>
+<hr />
 <h1 id="_12">方差</h1>
-<p>描述了r.v.对其数学期望的离散程度<span class="arithmatex">\(设X为一r.v.，若E[X-E(X)]^2存在，称其为X的方差，记作D(X)或Var(X),\sqrt{D(X)}为X的均方差或标准差\)</span><span class="arithmatex">\(离散型：D(X)=\Sigma_k[x_k-E(X)]^2\cdot p_k,连续型：D(X)=\int_{-\infty}^{+\infty}[x-E(X)]^2f(x)dx\)</span>
-==方差的计算方式==：<span class="arithmatex">\(D(X)=E(X^2)-[E(X)]^2\)</span></p>
-<h2 id="0-1">0-1分布</h2>
-<p><span class="arithmatex">\(E(X)=p,E(X^2)=p,D(X)=p-p^2\)</span></p>
+<p>描述了 r.v. 对其数学期望的离散程度。设 <span class="arithmatex">\(X\)</span> 为一 r.v.，若 <span class="arithmatex">\(E[X-E(X)]^2\)</span> 存在，称其为 <span class="arithmatex">\(X\)</span> 的方差，记作 <span class="arithmatex">\(D(X)\)</span> 或 <span class="arithmatex">\(Var(X)\)</span>，<span class="arithmatex">\(\sqrt{D(X)}\)</span> 为 <span class="arithmatex">\(X\)</span> 的均方差或标准差。</p>
+<ul>
+<li><strong>离散型</strong>：<span class="arithmatex">\(D(X)=\sum_k[x_k-E(X)]^2\cdot p_k\)</span></li>
+<li><strong>连续型</strong>：<span class="arithmatex">\(D(X)=\int_{-\infty}^{+\infty}[x-E(X)]^2f(x)dx\)</span></li>
+</ul>
+<p><strong>方差的计算方式</strong>：
+$$
+D(X)=E(X^2)-[E(X)]^2
+$$</p>
+<h2 id="0-1">0-1 分布</h2>
+<p><span class="arithmatex">\(E(X)=p, \quad E(X^2)=p\)</span>
+<span class="arithmatex">\(D(X)=p-p^2=p(1-p)\)</span></p>
 <h2 id="_13">二项分布</h2>
-<p><span class="arithmatex">\(设X\)</span>~<span class="arithmatex">\(b(n,p),P\{X=k\}=C_n^kp^kq^{(n-k)}\)</span>
+<p>设 <span class="arithmatex">\(X \sim b(n,p)\)</span>，<span class="arithmatex">\(P\{X=k\}=C_n^kp^kq^{(n-k)}\)</span>
 <span class="arithmatex">\(E(X^2)=n(n-1)p^2+np\)</span>
 <span class="arithmatex">\(D(X)=E(X^2)-E(X)^2=np(1-p)\)</span></p>
 <h2 id="_14">泊松分布</h2>
-<p><span class="arithmatex">\(设X\)</span>~<span class="arithmatex">\(\pi(\lambda),P\{X=k\}=\frac{\lambda^k}{k!}e^{-\lambda}\)</span>
-<span class="arithmatex">\(E(X)=\lambda,E(X^2)=\lambda^2+\lambda\)</span>
+<p>设 <span class="arithmatex">\(X \sim \pi(\lambda)\)</span>，<span class="arithmatex">\(P\{X=k\}=\frac{\lambda^k}{k!}e^{-\lambda}\)</span>
+<span class="arithmatex">\(E(X)=\lambda, \quad E(X^2)=\lambda^2+\lambda\)</span>
 <span class="arithmatex">\(D(X)=E(X^2)-E(X)^2=\lambda\)</span></p>
 <h2 id="_15">均匀分布</h2>
-<p><span class="arithmatex">\(f(x)=\frac{1}{b-a},a\le x\le b\)</span>
-<span class="arithmatex">\(E(X)=\frac{a+b}{2},E(X^2)=\frac{1}{3}(a^2+ab+b^2)\)</span>
+<p><span class="arithmatex">\(f(x)=\frac{1}{b-a}, \quad a\le x\le b\)</span>
+<span class="arithmatex">\(E(X)=\frac{a+b}{2}, \quad E(X^2)=\frac{1}{3}(a^2+ab+b^2)\)</span>
 <span class="arithmatex">\(D(X)=\frac{(b-a)^2}{12}\)</span></p>
 <h2 id="_16">指数分布</h2>
-<p><span class="arithmatex">\(E(X)=\int_{-\infty}^{+\infty}x\lambda e^{-\lambda x}dx=\frac{1}{\lambda},E(X^2)=\int_{-\infty}^{+\infty}x^2\lambda e^{-\lambda x}dx=\frac{2}{\lambda^2}\)</span>
+<p><span class="arithmatex">\(E(X)=\int_{-\infty}^{+\infty}x\lambda e^{-\lambda x}dx=\frac{1}{\lambda}, \quad E(X^2)=\int_{-\infty}^{+\infty}x^2\lambda e^{-\lambda x}dx=\frac{2}{\lambda^2}\)</span>
 <span class="arithmatex">\(D(X)=\frac{1}{\lambda^2}\)</span></p>
 <h2 id="_17">正态分布</h2>
 <p><span class="arithmatex">\(D(X)=\sigma^2\)</span></p>
 <h2 id="_18">几何分布</h2>
-<p><span class="arithmatex">\(E(X)=\frac{1}{p},E(X^2)=\frac{2-p}{p^2}\)</span>
+<p><span class="arithmatex">\(E(X)=\frac{1}{p}, \quad E(X^2)=\frac{2-p}{p^2}\)</span>
 <span class="arithmatex">\(D(X)=\frac{1-p}{p^2}\)</span></p>
 <h2 id="_19">方差的性质</h2>
 <ol>
-<li>D(C)=0</li>
+<li><span class="arithmatex">\(D(C)=0\)</span></li>
 <li><span class="arithmatex">\(D(CX)=C^2 D(X)\)</span></li>
-<li><span class="arithmatex">\(X,Y相互独立，则有D(X\pm Y)=D(X)\pm D(Y)\)</span></li>
-<li><span class="arithmatex">\(D(c_1X_1+\cdots +c_nX_n)=c_1^2D(X1)+\cdots+c_n^2D(X_n)\)</span></li>
-<li><span class="arithmatex">\(D(X)=0的充要条件是X以概率1取常数C\)</span></li>
-<li>切比雪夫不等式
-    <span class="arithmatex">\(对于r.v.X,E(X)=\mu,D(X)=\sigma^2,\forall \epsilon&gt;0,P\{ |X-\mu|\ge \epsilon\}\le \frac {\sigma^2} {\epsilon^2}\)</span></li>
+<li><span class="arithmatex">\(X, Y\)</span> 相互独立，则有 <span class="arithmatex">\(D(X\pm Y)=D(X)+ D(Y)\)</span></li>
+<li><span class="arithmatex">\(D(c_1X_1+\cdots +c_nX_n)=c_1^2D(X_1)+\cdots+c_n^2D(X_n)\)</span> （当 <span class="arithmatex">\(X_i\)</span> 相互独立）</li>
+<li><span class="arithmatex">\(D(X)=0\)</span> 的充要条件是 <span class="arithmatex">\(X\)</span> 以概率 1 取常数 <span class="arithmatex">\(C\)</span></li>
+<li><strong>切比雪夫不等式</strong>
+    对于 r.v. <span class="arithmatex">\(X\)</span>，<span class="arithmatex">\(E(X)=\mu, D(X)=\sigma^2\)</span>，<span class="arithmatex">\(\forall \epsilon&gt;0\)</span>：
+    $$
+    P{ |X-\mu|\ge \epsilon}\le \frac {\sigma^2} {\epsilon^2}
+    $$</li>
 </ol>
+<hr />
 <h1 id="_20">条件方差</h1>
-<p><span class="arithmatex">\(Var(X|Y)=E((X-E(X|Y))^2|Y)=E(X^2|Y)-(E(X|Y))^2\)</span></p>
+<div class="arithmatex">\[
+Var(X|Y)=E((X-E(X|Y))^2|Y)=E(X^2|Y)-(E(X|Y))^2
+\]</div>
 <h2 id="_21">条件方差公式</h2>
-<p><span class="arithmatex">\(E(Var(X|Y))=E(E(X^2|Y)-E((E(X|Y))^2)=E(X^2)-E((E(X|Y))^2)\)</span><span class="arithmatex">\(Var(E(X|Y))=E((E(X|Y))^2)-(E(E(X|Y)))^2=E((E(X|Y))^2)-(E(X))^2\)</span>
-<span class="arithmatex">\(Var(X)=E(Var(X|Y))+Var(E(X|Y))\)</span></p>
+<div class="arithmatex">\[
+E(Var(X|Y))=E(E(X^2|Y)-(E(X|Y))^2)=E(X^2)-E((E(X|Y))^2)
+$$
+$$
+Var(E(X|Y))=E((E(X|Y))^2)-(E(E(X|Y)))^2=E((E(X|Y))^2)-(E(X))^2
+$$
+$$
+Var(X)=E(Var(X|Y))+Var(E(X|Y))
+\]</div>
+<hr />
 <h1 id="_22">条件期望及预测</h1>
-<p>在实际问题中，有时会遇到这种情况，即某人观察到随机变量<span class="arithmatex">\(X\)</span>的值，然后基于<span class="arithmatex">\(X\)</span>的观察值，要对第二个随机变量<span class="arithmatex">\(Y\)</span>的值进行预测。 
-令<span class="arithmatex">\(g(x)\)</span>表示预测值，即当观测到<span class="arithmatex">\(X\)</span>的值<span class="arithmatex">\(x\)</span>以后，<span class="arithmatex">\(g(x)\)</span>就是<span class="arithmatex">\(Y\)</span>的值的预测值。
-显然，我们希望选择 <span class="arithmatex">\(g\)</span> 使 <span class="arithmatex">\(g(X)\)</span>接近 <span class="arithmatex">\(Y\)</span>.选择 <span class="arithmatex">\(g\)</span> 的一个准则是极小化<span class="arithmatex">\(\mathrm{E}\left((Y-g(X))^2\right)\)</span>.下面我们指出在这个准则之下, <span class="arithmatex">\(Y\)</span> 的最好的预测值为<span class="arithmatex">\(g(X) = \mathrm{E}(Y|X)\)</span>；</p>
+<p>在实际问题中，有时会遇到这种情况，即某人观察到随机变量 <span class="arithmatex">\(X\)</span> 的值，然后基于 <span class="arithmatex">\(X\)</span> 的观察值，要对第二个随机变量 <span class="arithmatex">\(Y\)</span> 的值进行预测。</p>
+<p>令 <span class="arithmatex">\(g(x)\)</span> 表示预测值，即当观测到 <span class="arithmatex">\(X\)</span> 的值 <span class="arithmatex">\(x\)</span> 以后，<span class="arithmatex">\(g(x)\)</span> 就是 <span class="arithmatex">\(Y\)</span> 的值的预测值。
+显然，我们希望选择 <span class="arithmatex">\(g\)</span> 使 <span class="arithmatex">\(g(X)\)</span> 接近 <span class="arithmatex">\(Y\)</span>。选择 <span class="arithmatex">\(g\)</span> 的一个准则是极小化 <span class="arithmatex">\(\mathrm{E}\left((Y-g(X))^2\right)\)</span>。下面我们指出在这个准则之下，<span class="arithmatex">\(Y\)</span> 的最好的预测值为 <span class="arithmatex">\(g(X) = \mathrm{E}(Y|X)\)</span>。</p>
+<hr />
 <h1 id="_23">协方差</h1>
-<p><span class="arithmatex">\(设（X,Y）为二维r.v.，若E((X-E(X))(Y-E(Y)))存在，则称其为X和Y的协方差，记为Cov(X,Y)\)</span><span class="arithmatex">\(Cov(X,Y)=E((X-E(X))(Y-E(Y)))=E(XY)-E(X)E(Y)\)</span>
-<span class="arithmatex">\(D(X\pm Y)=D(X)+D(Y)\pm2Cov(X,Y)\)</span></p>
+<p>设 <span class="arithmatex">\((X,Y)\)</span> 为二维 r.v.，若 <span class="arithmatex">\(E((X-E(X))(Y-E(Y)))\)</span> 存在，则称其为 <span class="arithmatex">\(X\)</span> 和 <span class="arithmatex">\(Y\)</span> 的协方差，记为 <span class="arithmatex">\(Cov(X,Y)\)</span>。
+$$
+Cov(X,Y)=E((X-E(X))(Y-E(Y)))=E(XY)-E(X)E(Y)
+$$
+$$
+D(X\pm Y)=D(X)+D(Y)\pm 2Cov(X,Y)
+$$</p>
 <h2 id="_24">性质</h2>
 <ol>
 <li><span class="arithmatex">\(Cov(X,Y)=Cov(Y,X)\)</span></li>
-<li><span class="arithmatex">\(Cov(a_1X+b_1,a_2Y+b_2)=a_1a_2Cov(X,Y)\)</span></li>
-<li><span class="arithmatex">\(Cov(X_1+X_2,Y)=Cov(X_1,Y)+Cov(X_2,Y)\)</span></li>
-<li><span class="arithmatex">\(Cov(X,a)=0,Cov(X,X)=D(X)\)</span></li>
-<li><span class="arithmatex">\(若 ( X, Y ) 相互独立，则 Cov(X, Y)=0\)</span>. </li>
-<li><span class="arithmatex">\(|Cov(X,Y)|^2 \leq D(X) \cdot D(Y) 等号成立当且仅当X与Y之间有严格的线性关系.(Y=aX+b)\)</span></li>
-<li><span class="arithmatex">\(Cov(aX+bY,cX+dY)=acD(X)+(ad+bc)Cov(X,Y)+bdD(Y)\)</span></li>
+<li><span class="arithmatex">\(Cov(a_1X+b_1, a_2Y+b_2)=a_1a_2Cov(X,Y)\)</span></li>
+<li><span class="arithmatex">\(Cov(X_1+X_2, Y)=Cov(X_1,Y)+Cov(X_2,Y)\)</span></li>
+<li><span class="arithmatex">\(Cov(X,a)=0, \quad Cov(X,X)=D(X)\)</span></li>
+<li>若 <span class="arithmatex">\((X, Y)\)</span> 相互独立，则 <span class="arithmatex">\(Cov(X, Y)=0\)</span>。</li>
+<li><span class="arithmatex">\(|Cov(X,Y)|^2 \leq D(X) \cdot D(Y)\)</span> （等号成立当且仅当 <span class="arithmatex">\(X\)</span> 与 <span class="arithmatex">\(Y\)</span> 之间有严格的线性关系 <span class="arithmatex">\(Y=aX+b\)</span>）</li>
+<li><span class="arithmatex">\(Cov(aX+bY, cX+dY)=acD(X)+(ad+bc)Cov(X,Y)+bdD(Y)\)</span></li>
 </ol>
+<hr />
 <h1 id="_25">相关系数</h1>
-<p><span class="arithmatex">\(若D(X)\ne 0,D(Y)\ne 0,则\frac {Cov(X,Y)}{\sqrt{D(X)D(Y)}}为X,Y的相关系数，记为\rho_{XY}\)</span>
-相关系数是标准化了的协方差</p>
+<p>若 <span class="arithmatex">\(D(X)\ne 0, D(Y)\ne 0\)</span>，则 <span class="arithmatex">\(\frac {Cov(X,Y)}{\sqrt{D(X)D(Y)}}\)</span> 为 <span class="arithmatex">\(X,Y\)</span> 的相关系数，记为 <span class="arithmatex">\(\rho_{XY}\)</span>。
+相关系数是标准化了的协方差。</p>
 <h2 id="_26">性质</h2>
 <ol>
-<li><span class="arithmatex">\(|\rho_{XY}|\le1\)</span></li>
-<li><span class="arithmatex">\(若X,Y相互独立，则\rho_{XY}=0\)</span></li>
-<li><span class="arithmatex">\(|\rho_{XY}|=1当且仅当X和Y线性相关\)</span><blockquote>
-<p>[!note]    相关系数刻画了变量之间的==线性相关==关系，不能反映其是否相互独立</p>
-</blockquote>
-</li>
+<li><span class="arithmatex">\(|\rho_{XY}|\le 1\)</span></li>
+<li>若 <span class="arithmatex">\(X,Y\)</span> 相互独立，则 <span class="arithmatex">\(\rho_{XY}=0\)</span></li>
+<li><span class="arithmatex">\(|\rho_{XY}|=1\)</span> 当且仅当 <span class="arithmatex">\(X\)</span> 和 <span class="arithmatex">\(Y\)</span> 线性相关</li>
 </ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>相关系数刻画了变量之间的 <strong>线性相关</strong> 关系，不能反映其是否相互独立。</p>
+</div>
+<hr />
 <h1 id="_27">矩</h1>
 <ol>
-<li><span class="arithmatex">\(若E(X^k)存在，则称它为X的k阶原点矩\)</span></li>
-<li><span class="arithmatex">\(若E((X-E(X))^k)存在，则称其为X的k阶中心矩\)</span></li>
-<li><span class="arithmatex">\(若E(X^k\cdot Y^l)存在，则称它为X和Y的k+l阶混合矩\)</span></li>
-<li><span class="arithmatex">\(E((X-E(X))^k\cdot (Y-E(Y))^l)，X和Y的k+l阶混合中心矩\)</span>
-<span class="arithmatex">\(显然，E(X),E(Y)为一阶原点矩，D(X),D(Y)为二阶中心矩，Cov(X,Y)为二阶混合中心矩\)</span></li>
+<li>若 <span class="arithmatex">\(E(X^k)\)</span> 存在，则称它为 <span class="arithmatex">\(X\)</span> 的 <strong><span class="arithmatex">\(k\)</span> 阶原点矩</strong>。</li>
+<li>若 <span class="arithmatex">\(E((X-E(X))^k)\)</span> 存在，则称其为 <span class="arithmatex">\(X\)</span> 的 <strong><span class="arithmatex">\(k\)</span> 阶中心矩</strong>。</li>
+<li>若 <span class="arithmatex">\(E(X^k\cdot Y^l)\)</span> 存在，则称它为 <span class="arithmatex">\(X\)</span> 和 <span class="arithmatex">\(Y\)</span> 的 <strong><span class="arithmatex">\(k+l\)</span> 阶混合矩</strong>。</li>
+<li><span class="arithmatex">\(E((X-E(X))^k\cdot (Y-E(Y))^l)\)</span>，为 <span class="arithmatex">\(X\)</span> 和 <span class="arithmatex">\(Y\)</span> 的 <strong><span class="arithmatex">\(k+l\)</span> 阶混合中心矩</strong>。</li>
 </ol>
+<p>显然，<span class="arithmatex">\(E(X),E(Y)\)</span> 为一阶原点矩，<span class="arithmatex">\(D(X),D(Y)\)</span> 为二阶中心矩，<span class="arithmatex">\(Cov(X,Y)\)</span> 为二阶混合中心矩。</p>
+<hr />
 <h1 id="_28">协方差矩阵</h1>
-<p>设<span class="arithmatex">\(n\)</span>维随机变量<span class="arithmatex">\((X_1,X_2,\cdots,X_n)\)</span>的二阶中心矩及二阶混合中心矩 <span class="arithmatex">\(c_{ij} = \text{Cov}(X_i,X_j)\)</span>，<span class="arithmatex">\(i,j = 1,2,\cdots,n\)</span>，都存在，则称矩阵 $$ \boldsymbol{C} = \begin{pmatrix} c_{11} &amp; c_{12} &amp; \cdots &amp; c_{1n} \ c_{21} &amp; c_{22} &amp; \cdots &amp; c_{2n} \ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \ c_{n1} &amp; c_{n2} &amp; \cdots &amp; c_{nn} \end{pmatrix} $$ 为<span class="arithmatex">\(n\)</span>维随机变量<span class="arithmatex">\((X_1,X_2,\cdots,X_n)\)</span>的<strong>协方差阵</strong>． </p>
+<p>设 <span class="arithmatex">\(n\)</span> 维随机变量 <span class="arithmatex">\((X_1,X_2,\cdots,X_n)\)</span> 的二阶中心矩及二阶混合中心矩 <span class="arithmatex">\(c_{ij} = \text{Cov}(X_i,X_j)\)</span>，<span class="arithmatex">\(i,j = 1,2,\cdots,n\)</span>，都存在，则称矩阵
+$$ 
+\boldsymbol{C} = \begin{pmatrix} c_{11} &amp; c_{12} &amp; \cdots &amp; c_{1n} \ c_{21} &amp; c_{22} &amp; \cdots &amp; c_{2n} \ \cdots &amp; \cdots &amp; \cdots &amp; \cdots \ c_{n1} &amp; c_{n2} &amp; \cdots &amp; c_{nn} \end{pmatrix} 
+$$
+为 <span class="arithmatex">\(n\)</span> 维随机变量 <span class="arithmatex">\((X_1,X_2,\cdots,X_n)\)</span> 的 <strong>协方差阵</strong>。</p>
 <blockquote>
-<p>由于<span class="arithmatex">\(c_{ij}=c_{ji}\ (i,j=1,2,\dots,n)\)</span>，因此协方差矩阵是一个对称矩阵；  （由协方差的性质 <span class="arithmatex">\(\text{Cov}(X,Y)=\text{Cov}(Y,X)\)</span>，<span class="arithmatex">\(c_{ij}=c_{ji}\)</span>可得</p>
+<p>由于 <span class="arithmatex">\(c_{ij}=c_{ji}\ (i,j=1,2,\dots,n)\)</span>，因此协方差矩阵是一个对称矩阵（由协方差的性质 <span class="arithmatex">\(\text{Cov}(X,Y)=\text{Cov}(Y,X)\)</span>，<span class="arithmatex">\(c_{ij}=c_{ji}\)</span> 可得）。</p>
 </blockquote>
 <h2 id="_29">性质</h2>
 <ol>
-<li>C是对称矩阵</li>
+<li><span class="arithmatex">\(C\)</span> 是对称矩阵</li>
 <li><span class="arithmatex">\(c_{ii}=D(X_i)\)</span></li>
 <li><span class="arithmatex">\(c_{ij}^2\le c_{ii}c_{jj}\)</span></li>
-<li>C是非负定的，即对任意的定向<span class="arithmatex">\(a(a_1,a_2,……a_n)^T,a^TCa\ge0\)</span></li>
+<li><span class="arithmatex">\(C\)</span> 是非负定的，即对任意的定向 <span class="arithmatex">\(a=(a_1,a_2,\dots,a_n)^T\)</span>，有 <span class="arithmatex">\(a^TCa\ge0\)</span></li>
 </ol>
-<h1 id="n">n维正态分布</h1>
+<hr />
+<h1 id="n">n 维正态分布</h1>
 <ol>
-<li><strong>定义</strong>
-设<span class="arithmatex">\(n\)</span>维随机变量<span class="arithmatex">\((X_1,X_2,\cdots,X_n)\)</span>的概率密度函数为<span class="arithmatex">\(f(x_1,x_2,\cdots,x_n)\)</span>，则称其为==<span class="arithmatex">\(n\)</span>维正态变量==，记为： $<span class="arithmatex">\((X_1,X_2,\cdots,X_n) \sim N(\boxed{\mu}, \boxed{C})\)</span>$ 其中： - <span class="arithmatex">\(\mu\)</span>是<span class="arithmatex">\(n\)</span>维常向量（均值向量）； - <span class="arithmatex">\({C}\)</span>是<span class="arithmatex">\(n\)</span>维对称正定矩阵（协方差矩阵）。 </li>
-<li><strong>符号表示</strong> $$ \boxed{X} = \begin{pmatrix} x_1 \ x_2 \ \vdots \ x_n \end{pmatrix},\quad \boxed{\mu} = \begin{pmatrix} \mu_1 \ \mu_2 \ \vdots \ \mu_n \end{pmatrix},\quad \boxed{C} = \begin{pmatrix} c_{11} &amp; c_{12} &amp; \cdots &amp; c_{1n} \ c_{21} &amp; c_{22} &amp; \cdots &amp; c_{2n} \ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \ c_{n1} &amp; c_{n2} &amp; \cdots &amp; c_{nn} \end{pmatrix} $$</li>
-<li><strong>概率密度函数</strong> $$ f(x_1,x_2,\cdots,x_n) = \frac{1}{(2\pi)^{\frac{n}{2}} |\boxed{C}|^{\frac{1}{2}}} \exp\left{ -\frac{1}{2} (\boxed{X}-\boxed{\mu})^T \boxed{C}^{-1} (\boxed{X}-\boxed{\mu}) \right} $$</li>
-<li>补充说明 - <span class="arithmatex">\(n\)</span>维正态变量是一维、二维正态分布的推广，其核心参数是<strong>均值向量<span class="arithmatex">\(\boxed{\mu}\)</span></strong>和协方差矩阵<span class="arithmatex">\(\boxed{C}\)</span>**；</li>
-<li>协方差矩阵<span class="arithmatex">\(\boxed{C}\)</span>的正定性保证了密度函数的合理性（分母非零、指数部分为负定二次型）；</li>
-<li>当<span class="arithmatex">\(n=2\)</span>时，该定义退化为二维正态分布的形式。 ```</li>
+<li>
+<p><strong>定义</strong>
+    设 <span class="arithmatex">\(n\)</span> 维随机变量 <span class="arithmatex">\((X_1,X_2,\cdots,X_n)\)</span> 的概率密度函数为 <span class="arithmatex">\(f(x_1,x_2,\cdots,x_n)\)</span>，则称其为 <strong><span class="arithmatex">\(n\)</span> 维正态变量</strong>，记为：
+    $$
+    (X_1,X_2,\cdots,X_n) \sim N(\boxed{\mu}, \boxed{C})
+    $$
+    其中：</p>
+<ul>
+<li><span class="arithmatex">\(\mu\)</span> 是 <span class="arithmatex">\(n\)</span> 维常向量（均值向量）；</li>
+<li><span class="arithmatex">\({C}\)</span> 是 <span class="arithmatex">\(n\)</span> 维对称正定矩阵（协方差矩阵）。</li>
+</ul>
+</li>
+<li>
+<p><strong>符号表示</strong>
+    $$ 
+    \boxed{X} = \begin{pmatrix} x_1 \ x_2 \ \vdots \ x_n \end{pmatrix},\quad \boxed{\mu} = \begin{pmatrix} \mu_1 \ \mu_2 \ \vdots \ \mu_n \end{pmatrix},\quad \boxed{C} = \begin{pmatrix} c_{11} &amp; c_{12} &amp; \cdots &amp; c_{1n} \ c_{21} &amp; c_{22} &amp; \cdots &amp; c_{2n} \ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \ c_{n1} &amp; c_{n2} &amp; \cdots &amp; c_{nn} \end{pmatrix} 
+    $$</p>
+</li>
+<li>
+<p><strong>概率密度函数</strong>
+    $$ 
+    f(x_1,x_2,\cdots,x_n) = \frac{1}{(2\pi)^{\frac{n}{2}} |\boxed{C}|^{\frac{1}{2}}} \exp\left{ -\frac{1}{2} (\boxed{X}-\boxed{\mu})^T \boxed{C}^{-1} (\boxed{X}-\boxed{\mu}) \right} 
+    $$</p>
+</li>
+<li>
+<p><strong>补充说明</strong></p>
+<ul>
+<li><span class="arithmatex">\(n\)</span> 维正态变量是一维、二维正态分布的推广，其核心参数是 <strong>均值向量 <span class="arithmatex">\(\boxed{\mu}\)</span></strong> 和 <strong>协方差矩阵 <span class="arithmatex">\(\boxed{C}\)</span></strong>；</li>
+<li>协方差矩阵 <span class="arithmatex">\(\boxed{C}\)</span> 的正定性保证了密度函数的合理性（分母非零、指数部分为负定二次型）；</li>
+<li>当 <span class="arithmatex">\(n=2\)</span> 时，该定义退化为二维正态分布的形式。</li>
+</ul>
+</li>
 </ol>
 
 
@@ -4091,7 +4184,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年1月12日 10:44:32 CST">2026年1月12日 10:44:32</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年1月12日 11:22:16 CST">2026年1月12日 11:22:16</span>
   </span>
 
     
