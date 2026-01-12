@@ -24,7 +24,7 @@ nav:
       - 简介: ie/index.md
       - 概率论: 
         - Introduction: ie/ProbabilityTheory/index.md
-        - 概率的基本概念: ie/ProbabilityTheory/概率的基本概念.md
+        - 概率论的基本概念: ie/ProbabilityTheory/概率论的基本概念.md
         - 随机变量及其分布: ie/ProbabilityTheory/随机变量及其分布.md
         - 随机变量的数字特征: ie/ProbabilityTheory/随机变量的数字特征.md
         - 多维变量及其随机分布: ie/ProbabilityTheory/多维变量及其随机分布.md
