@@ -44,6 +44,9 @@ nav:
       - 自动化导论(SME): auto/aai/index.md
       - 普通物理: auto/gp1/index.md
       - 电路分析: auto/ca/index.md
+      - 信号与系统: 'auto/signals&&systems/index.md'
+      - 数字电路与微机系统: auto/9character-class/index.md
+      - 模拟电路: auto/Analog Circuits/index.md
     - CS:
       - 简介: cs/cs.md
       - ICS: 
