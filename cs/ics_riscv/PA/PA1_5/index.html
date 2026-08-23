@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../../pic/logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
       
       
   
@@ -1670,6 +1670,90 @@
     
   
     电路分析
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../auto/signals%26%26systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    信号与系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../auto/9character-class/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数字电路与微机系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../auto/Analog%20Circuits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    模拟电路
   
 
     
@@ -4010,11 +4094,11 @@
 <p>正如我们前面所说，有需求就应该有自动化偷懒的办法，所以这个可以吗？</p>
 </div>
 <p>还真可以，我去问了问 AI ，可以使用以下命令实现：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;^\s*export\s+(NEMU_HOME|AM_HOME)=&#39;</span><span class="w"> </span>~/.bashrc<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/export/set -x/; s/=/ /&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.config/fish/config.fish
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">'^\s*export\s+(NEMU_HOME|AM_HOME)='</span><span class="w"> </span>~/.bashrc<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">'s/export/set -x/; s/=/ /'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.config/fish/config.fish
 </code></pre></div>
 <p>所以，对于一个研究计算机的人来说，偷懒是生产力发展的第一动力（误）。</p>
 <p>但注意，这只是个简易的命令，将配置追加到 fish 的配置文件中，所以使用一次就好，不要多次使用，不然 fish 的配置文件末尾会被追加一堆内容。如果使用后还是不能正常 make ，建议重启试试。同样，如果你后面使用了 navy-apps ，就回来再使用一次下面这个命令：</p>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">&#39;^\s*export\s+(NAVY_HOME)=&#39;</span><span class="w"> </span>~/.bashrc<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">&#39;s/export/set -x/; s/=/ /&#39;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.config/fish/config.fish
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>grep<span class="w"> </span>-E<span class="w"> </span><span class="s1">'^\s*export\s+(NAVY_HOME)='</span><span class="w"> </span>~/.bashrc<span class="w"> </span><span class="p">|</span><span class="w"> </span>sed<span class="w"> </span><span class="s1">'s/export/set -x/; s/=/ /'</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>~/.config/fish/config.fish
 </code></pre></div>
 <p>经历了前面这些小小的麻烦事后，你就拥有了一个方便好用的 fish 了，相信它（以及这段安装工具的经历）会在你后续的实验里发挥重要作用！</p>
 <hr />
@@ -4047,7 +4131,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年5月31日 22:42:18 CST">2026年5月31日 22:42:18</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年8月23日 15:39:32 CST">2026年8月23日 15:39:32</span>
   </span>
 
     
@@ -4100,7 +4184,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "math"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       

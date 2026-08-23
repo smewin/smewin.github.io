@@ -23,7 +23,7 @@
       
       
       <link rel="icon" href="../../../../pic/logo.png">
-      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
     
     
       
@@ -31,7 +31,7 @@
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.484c7ddc.min.css">
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.ec1eaa64.min.css">
       
       
   
@@ -1670,6 +1670,90 @@
     
   
     电路分析
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../auto/signals%26%26systems/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    信号与系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../auto/9character-class/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    数字电路与微机系统
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../auto/Analog%20Circuits/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    模拟电路
   
 
     
@@ -4129,7 +4213,7 @@
 <h3 id="log">Log</h3>
 <p>继续在 <code>include/debug.h</code> 文件中，看到 <code>Log</code> 宏，里面可以看到 <code>__FILE__</code> <code>__LINE__</code> <code>__func__</code> 这些宏，它们代表什么应该很清晰。</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="cp">#define Log(format, ...) \</span>
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="cp">    _Log(ANSI_FMT(&quot;[%s:%d %s] &quot; format, ANSI_FG_BLUE) &quot;\n&quot;, \</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="cp">    _Log(ANSI_FMT("[%s:%d %s] " format, ANSI_FG_BLUE) "\n", \</span>
 <a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="cp">        __FILE__, __LINE__, __func__, ## __VA_ARGS__)</span>
 </code></pre></div>
 <p>比较不清晰的可能就是宏定义上的 <code>...</code> 和定义末尾的 <code>## __VA_ARGS__</code> ，前面其他的宏已经说了那么多了，这个宏就请你去问 AI 吧~</p>
@@ -4151,7 +4235,7 @@
 <a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">_8</span><span class="p">[</span><span class="mi">2</span><span class="p">];</span>
 <a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="n">gpr</span><span class="p">[</span><span class="mi">8</span><span class="p">];</span>
 <a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>
-<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">  </span><span class="cm">/* Do NOT change the order of the GPRs&#39; definitions. */</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="w">  </span><span class="cm">/* Do NOT change the order of the GPRs' definitions. */</span>
 <a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="w">  </span><span class="kt">uint32_t</span><span class="w"> </span><span class="n">eax</span><span class="p">,</span><span class="w"> </span><span class="n">ecx</span><span class="p">,</span><span class="w"> </span><span class="n">edx</span><span class="p">,</span><span class="w"> </span><span class="n">ebx</span><span class="p">,</span><span class="w"> </span><span class="n">esp</span><span class="p">,</span><span class="w"> </span><span class="n">ebp</span><span class="p">,</span><span class="w"> </span><span class="n">esi</span><span class="p">,</span><span class="w"> </span><span class="n">edi</span><span class="p">;</span>
 <a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>
 <a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="w">  </span><span class="n">vaddr_t</span><span class="w"> </span><span class="n">pc</span><span class="p">;</span>
@@ -4164,7 +4248,7 @@
 </div>
 <p>我们来到 <code>include/isa.h</code> 中，看到：</p>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="c1">// The macro `__GUEST_ISA__` is defined in $(CFLAGS).</span>
-<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1">// It will be expanded as &quot;x86&quot; or &quot;mips32&quot; ...</span>
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="c1">// It will be expanded as "x86" or "mips32" ...</span>
 <a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="k">typedef</span><span class="w"> </span><span class="n">concat</span><span class="p">(</span><span class="n">__GUEST_ISA__</span><span class="p">,</span><span class="w"> </span><span class="n">_CPU_state</span><span class="p">)</span><span class="w"> </span><span class="n">CPU_state</span><span class="p">;</span>
 </code></pre></div>
 <p>这里用到了我们前面讲过的 <code>concat</code> 宏，将 <code>__GUEST_ISA__</code> 和 <code>_CPU_state</code> 连接起来，得到 <code>x86_CPU_state</code> 或者 <code>riscv32_CPU_state</code> 这样的结构体名称，并给到它一个别名 <code>CPU_state</code>。</p>
@@ -4303,7 +4387,7 @@
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1zM12.5 7v5.2l4 2.4-1 1L11 13V7zM11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年5月31日 22:42:18 CST">2026年5月31日 22:42:18</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-datetime" title="2026年8月23日 15:39:32 CST">2026年8月23日 15:39:32</span>
   </span>
 
     
@@ -4356,7 +4440,7 @@
       <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.tabs", "math"], "search": "../../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      <script src="../../../../assets/javascripts/bundle.d7400e89.min.js"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
