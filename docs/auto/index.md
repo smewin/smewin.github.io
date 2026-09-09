@@ -27,6 +27,8 @@
 
 [概率论](../ie/ProbabilityTheory/index.md)
 
+[人工智能](../cs/ai/index.md)
+
 ### 学科专业
 
 [自动化导论](./aai/index.md)
@@ -34,3 +36,11 @@
 [普通物理](./gp1/index.md)
 
 [电路分析](./ca/index.md)
+
+[数字电路与微机系统](./9character-class/index.md)
+
+[模拟电路](./Analog%20Circuits/index.md)
+
+[信号与系统](./signals&&systems/index.md)
+
+[传感器原理与技术](./sensor/index.md)
