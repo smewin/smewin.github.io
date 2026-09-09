@@ -42,11 +42,13 @@ nav:
     - 自动化:
       - 简介: auto/index.md
       - 自动化导论(SME): auto/aai/index.md
+      - 自动控制原理: auto/auto/index.md
       - 普通物理: auto/gp1/index.md
       - 电路分析: auto/ca/index.md
       - 信号与系统: 'auto/signals&&systems/index.md'
       - 数字电路与微机系统: auto/9character-class/index.md
       - 模拟电路: auto/Analog Circuits/index.md
+      - 传感器原理与技术: auto/sensor/index.md
     - CS:
       - 简介: cs/cs.md
       - ICS: 
@@ -100,6 +102,7 @@ nav:
       - 数据结构与算法: cs/dsa/dsa.md
       - 离散数学: cs/dm/index.md
       - 面向对象: cs/fop/index.md
+      - 人工智能: cs/ai/index.md
     - 通修:
       - 简介: general/index.md
     - 转工管群在线服务:
