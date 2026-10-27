@@ -12,7 +12,7 @@ nav:
       - 贡献者指南: sme_intro/contributors.md
       - FAQ: sme_intro/FAQ.md
     - 人物志: 
-      - 疾旋鼬: people/jxy.md
+      - Yifei Zhang: people/yifei.md
       - Xt007: people/xt007.md
       - 吻安: people/wenan.md
     - 金融工程:
@@ -103,11 +103,6 @@ nav:
       - 离散数学: cs/dm/index.md
       - 面向对象: cs/fop/index.md
       - 人工智能: cs/ai/index.md
-    - 通修:
-      - 简介: general/index.md
-    - 转工管群在线服务:
-      - 简介: cloud/index.md
-      - 转工管群OJ平台: cloud/oj.md
     - ISGSNSG:
       - 简介: sec/index.md
 
